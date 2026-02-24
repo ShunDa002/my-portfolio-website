@@ -21,15 +21,14 @@ export const About = () => {
               <span className="text-cyan-200">
                 Universiti Malaysia Pahang Al-Sultan Abdullah
               </span>
-              , with a deep passion for the intersection of{" "}
-              <strong>FinTech</strong> and <strong>Agentic AI</strong>.
-            </p>
-            <p className="text-slate-300 leading-relaxed text-lg mt-4">
-              My work focuses on building intelligent systems that can reason,
-              act, and solve complex problems. From fine-tuning{" "}
-              <strong>LLMs</strong> to developing{" "}
-              <strong>Computer Vision</strong> models, I aim to bridge the gap
-              between theoretical AI and practical, impact-driven applications.
+              , driven by a deep passion for <strong>Agentic AI</strong> and its
+              applications in FinTech. My work centers on building intelligent
+              systems capable of autonomous reasoning and complex
+              problem-solving. Whether I am fine-tuning{" "}
+              <strong>Computer Vision</strong> models for deepfake detection or
+              enabling LLMs to autonomously analyze real-time stock market data
+              , I am dedicated to translating theoretical AI into practical,
+              high-impact solutions.
             </p>
           </div>
         </div>

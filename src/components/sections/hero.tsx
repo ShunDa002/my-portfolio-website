@@ -14,7 +14,7 @@ export const Hero = () => {
             Hey I am
           </p>
           <h1 className="text-6xl md:text-8xl font-mono italic font-extrabold tracking-tight text-transparent bg-clip-text bg-linear-to-r from-cyan-glow to-blue-600">
-            SHON TAY
+            TAY SHON DA
           </h1>
         </div>
         <p className="text-lg md:text-2xl text-slate-300 max-w-2xl mx-auto font-normal opacity-0 animate-[fade-in-up_0.8s_ease-out_0.3s_forwards]">

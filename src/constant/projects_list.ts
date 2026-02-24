@@ -15,5 +15,13 @@ export const projects = [
     githubLink: "https://github.com/ShunDa002/sejarah-rag-website",
     image: "/images/projects/sejarah-rag.png",
   },
+  {
+    title: "Yahoo Finance MCP",
+    description:
+      "Yahoo Finance MCP is a lightweight MCP server that wraps yfinance into a clean set of tools for programmatic market data access. ",
+    tags: ["Python", "MCP"],
+    githubLink: "https://github.com/ShunDa002/yahoo-finance-mcp",
+    image: "",
+  },
   // ... other projects
 ];
