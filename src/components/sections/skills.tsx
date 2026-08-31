@@ -1,4 +1,5 @@
 import React from "react";
+import type { IconType } from "react-icons";
 import {
   SiPython,
   SiPytorch,
@@ -15,7 +16,7 @@ import {
   SiSupabase,
 } from "react-icons/si";
 
-const SkillPill = ({ icon: Icon, name }: { icon: any; name: string }) => (
+const SkillPill = ({ icon: Icon, name }: { icon: IconType; name: string }) => (
   <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/50 backdrop-blur-md border border-slate-800/50 hover:border-cyan-glow/30 transition-all group hover:bg-slate-800/60 duration-300">
     <Icon className="w-5 h-5 text-slate-400 group-hover:text-cyan-glow transition-colors" />
     <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">

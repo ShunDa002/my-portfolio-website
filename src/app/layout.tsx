@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Engineering the Future",
+  title: "Tay Shon Da | Software Engineering & AI Portfolio",
   description:
     "Software Engineering Student specializing in AI, LLMs, and Computer Vision.",
 };
@@ -26,10 +26,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-slate-200 selection:bg-cyan-glow/30 selection:text-cyan-100`}
-      >
+    // The font variables live on <html> because the @theme --font-mono token is
+    // declared on :root. Defining them on <body> instead leaves that token
+    // referencing an out-of-scope variable, which makes it invalid and silently
+    // drops every font-mono utility back to the inherited sans face.
+    <html
+      lang="en"
+      className={`dark ${geistSans.variable} ${geistMono.variable}`}
+    >
+      <body className="antialiased text-slate-200 selection:bg-cyan-glow/30 selection:text-cyan-100">
         <Header />
         <HybridBackground />
         <main className="relative z-20 flex flex-col items-center justify-center min-h-screen">

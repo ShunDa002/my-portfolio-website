@@ -7,7 +7,7 @@ export const Hero = () => {
     <section className="relative flex flex-col items-center justify-center min-h-screen max-w-5xl mx-auto px-6 text-center z-10 selection:bg-cyan-glow/30">
       <div className="space-y-6">
         <h2 className="text-cyan-glow tracking-widest text-xs font-semibold uppercase opacity-0 animate-[fade-in-up_0.8s_ease-out_0.1s_forwards]">
-          Tay's Portfolio
+          Tay&apos;s Portfolio
         </h2>
         <div className="opacity-0 animate-[fade-in-up_0.8s_ease-out_0.2s_forwards]">
           <p className="text-lg md:text-3xl text-slate-300 font-normal mb-2">
@@ -39,6 +39,7 @@ export const Hero = () => {
         <Link
           href="/resume.pdf"
           target="_blank"
+          rel="noopener noreferrer"
           className="group px-8 py-3 rounded-full bg-slate-900/50 backdrop-blur-md border border-slate-700/50 text-slate-200 hover:bg-slate-800/50 hover:border-cyan-glow/30 transition-all flex items-center gap-2"
         >
           <span>Download Resume</span>

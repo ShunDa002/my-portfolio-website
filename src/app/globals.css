@@ -4,6 +4,8 @@
   --color-midnight: #020617;
   --color-cyan-glow: #22d3ee;
 
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
 
   @keyframes fade-in-up {
@@ -20,11 +22,18 @@
 
 :root {
   --background: var(--color-midnight);
-  --foreground: #ededed;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
   font-family: var(--font-geist-sans), sans-serif;
+}
+
+/* Single global focus treatment: :focus-visible so it appears for keyboard
+   navigation but not for pointer interaction. An outline with an offset stays
+   visible on dark glass surfaces and on the filled cyan primary button, where
+   an inset ring would be swallowed. */
+:focus-visible {
+  outline: 2px solid var(--color-cyan-glow);
+  outline-offset: 3px;
 }

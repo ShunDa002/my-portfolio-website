@@ -40,10 +40,10 @@ export const About = () => {
             <div className="w-full h-full bg-linear-to-br from-slate-800 via-midnight to-slate-900 flex items-center justify-center text-slate-600 font-mono">
               <Image
                 src="/images/profile.png"
-                alt="Hero Image"
+                alt="Portrait photograph of Tay Shon Da"
                 width={600}
                 height={600}
-                className="object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>

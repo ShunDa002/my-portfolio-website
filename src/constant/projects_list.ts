@@ -1,4 +1,14 @@
-export const projects = [
+export type Project = {
+  title: string;
+  description: string;
+  tags: string[];
+  githubLink: string;
+  // Optional: a project without a UI (a server, a library) may have nothing to screenshot.
+  // The card renders a designed fallback panel instead.
+  image?: string;
+};
+
+export const projects: Project[] = [
   {
     title: "Deepfake Detector",
     description:
@@ -18,10 +28,8 @@ export const projects = [
   {
     title: "Yahoo Finance MCP",
     description:
-      "Yahoo Finance MCP is a lightweight MCP server that wraps yfinance into a clean set of tools for programmatic market data access. ",
+      "Yahoo Finance MCP is a lightweight MCP server that wraps yfinance into a clean set of tools for programmatic market data access.",
     tags: ["Python", "MCP"],
     githubLink: "https://github.com/ShunDa002/yahoo-finance-mcp",
-    image: "",
   },
-  // ... other projects
 ];
