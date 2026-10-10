@@ -4,7 +4,8 @@ import React, { useCallback, useSyncExternalStore } from "react";
 import Image from "next/image";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
-import type { Engine } from "tsparticles-engine";
+
+type Engine = Parameters<typeof loadSlim>[0];
 
 const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
 

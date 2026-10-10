@@ -1,0 +1,10 @@
+version: 1
+
+demo:
+  provider: youtube
+  video_id: abc123
+
+portfolio:
+  featured: true
+  priority: 10
+  category: ai

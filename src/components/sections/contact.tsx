@@ -1,4 +1,5 @@
-import { SiLinkedin, SiGithub } from "react-icons/si";
+import { SiGithub } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 import { Mail } from "lucide-react";
 import Link from "next/link";
 
@@ -34,7 +35,7 @@ export const Contact = () => {
           aria-label="LinkedIn profile"
           className="p-3 rounded-full bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 hover:scale-110 transition-all"
         >
-          <SiLinkedin className="w-6 h-6" />
+          <FaLinkedin className="w-6 h-6" />
         </Link>
         <Link
           href="https://github.com/ShunDa002"

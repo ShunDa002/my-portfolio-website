@@ -1,0 +1,20 @@
+{
+  "sha": "empty-vault-fixture",
+  "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/empty-vault-fixture",
+  "tree": [
+    {
+      "path": "wiki",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "empty1"
+    },
+    {
+      "path": "wiki/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "empty2",
+      "size": 0
+    }
+  ],
+  "truncated": false
+}

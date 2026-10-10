@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const Hero = () => {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen max-w-5xl mx-auto px-6 text-center z-10 selection:bg-cyan-glow/30">
+    <section id="hero" className="relative flex flex-col items-center justify-center min-h-screen max-w-5xl mx-auto px-6 text-center z-10 selection:bg-cyan-glow/30">
       <div className="space-y-6">
         <h2 className="text-cyan-glow tracking-widest text-xs font-semibold uppercase opacity-0 animate-[fade-in-up_0.8s_ease-out_0.1s_forwards]">
           Tay&apos;s Portfolio
