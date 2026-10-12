@@ -1,6 +1,7 @@
 import React from "react";
 import { MousePointerClick, FileDown } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
   return (
@@ -27,24 +28,34 @@ export const Hero = () => {
       </div>
 
       <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-[fade-in-up_0.8s_ease-out_0.4s_forwards]">
-        <Link
-          href="#projects"
-          className="group relative px-8 py-3 rounded-full bg-cyan-glow text-midnight font-semibold shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] transition-all flex items-center gap-2 overflow-hidden"
+        <Button
+          asChild
+          variant="primary"
+          size="lg"
+          className="group relative overflow-hidden flex items-center gap-2"
         >
-          <span className="relative z-10">View Projects</span>
-          <MousePointerClick className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
-          <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-        </Link>
+          <Link href="#projects">
+            <span className="relative z-10">View Projects</span>
+            <MousePointerClick className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+          </Link>
+        </Button>
 
-        <Link
-          href="/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group px-8 py-3 rounded-full bg-slate-900/50 backdrop-blur-md border border-slate-700/50 text-slate-200 hover:bg-slate-800/50 hover:border-cyan-glow/30 transition-all flex items-center gap-2"
+        <Button
+          asChild
+          variant="glass"
+          size="lg"
+          className="group flex items-center gap-2"
         >
-          <span>Download Resume</span>
-          <FileDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-        </Link>
+          <Link
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Download Resume</span>
+            <FileDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+          </Link>
+        </Button>
       </div>
     </section>
   );

@@ -5,6 +5,9 @@ import type { WikiPositionedGraphData, WikiPositionedNode } from '@/types/wiki';
 import { getClassificationColor } from '@/lib/wiki/colors';
 import { WikiDetailPanel } from './WikiDetailPanel';
 import { ZoomIn, ZoomOut, RotateCcw } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
 
 interface WikiGraphViewProps {
   initialData: WikiPositionedGraphData;
@@ -393,64 +396,72 @@ export const WikiGraphView: React.FC<WikiGraphViewProps> = ({ initialData, isEmb
       )}
 
       {/* Floating Controls (Zoom, Reset) */}
-      <div
+      <Card
         className={`absolute z-30 flex items-center gap-1.5 p-1.5 rounded-2xl bg-slate-900/85 backdrop-blur-md border border-slate-800 shadow-xl ${
           isEmbedded ? 'bottom-3 right-3 sm:bottom-4 sm:right-4' : 'bottom-6 right-6'
         }`}
       >
-        <button
+        <Button
           onClick={handleZoomIn}
           aria-label="Zoom in"
           title="Zoom in"
-          className="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800 transition-colors focus-visible:outline-cyan-glow"
+          variant="ghost"
+          size="icon-sm"
+          className="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
         >
           <ZoomIn className="w-4 h-4" />
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={handleZoomOut}
           aria-label="Zoom out"
           title="Zoom out"
-          className="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800 transition-colors focus-visible:outline-cyan-glow"
+          variant="ghost"
+          size="icon-sm"
+          className="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
         >
           <ZoomOut className="w-4 h-4" />
-        </button>
-        <div className="w-px h-4 bg-slate-800" />
-        <button
+        </Button>
+        <Separator orientation="vertical" className="h-4 bg-slate-800" />
+        <Button
           onClick={handleReset}
           aria-label="Reset view"
           title="Reset initial framing"
-          className="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800 transition-colors focus-visible:outline-cyan-glow"
+          variant="ghost"
+          size="icon-sm"
+          className="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
         >
           <RotateCcw className="w-4 h-4" />
-        </button>
-      </div>
+        </Button>
+      </Card>
 
       {/* Legend: dynamic based on classifications present */}
       {classifications.length > 0 && (
-        <aside
-          aria-label="Graph Legend"
+        <Card
+          asChild
           className={`absolute z-30 p-3.5 rounded-2xl bg-slate-900/85 backdrop-blur-md border border-slate-800 shadow-xl text-xs space-y-2 max-w-xs ${
             isEmbedded ? 'bottom-3 left-3 sm:bottom-4 sm:left-4' : 'bottom-6 left-6'
           }`}
         >
-          <span className="font-semibold text-slate-400 block uppercase tracking-wider text-[10px]">
-            Classifications
-          </span>
-          <div className="flex flex-wrap gap-x-4 gap-y-1.5">
-            {classifications.map((cls) => {
-              const color = getClassificationColor(cls);
-              return (
-                <div key={cls} className="flex items-center gap-2">
-                  <span
-                    className="w-2.5 h-2.5 rounded-full inline-block"
-                    style={{ backgroundColor: color }}
-                  />
-                  <span className="text-slate-300 capitalize">{cls}</span>
-                </div>
-              );
-            })}
-          </div>
-        </aside>
+          <aside aria-label="Graph Legend">
+            <span className="font-semibold text-slate-400 block uppercase tracking-wider text-[10px]">
+              Classifications
+            </span>
+            <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+              {classifications.map((cls) => {
+                const color = getClassificationColor(cls);
+                return (
+                  <div key={cls} className="flex items-center gap-2">
+                    <span
+                      className="w-2.5 h-2.5 rounded-full inline-block"
+                      style={{ backgroundColor: color }}
+                    />
+                    <span className="text-slate-300 capitalize">{cls}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </aside>
+        </Card>
       )}
 
       {/* Detail Panel */}

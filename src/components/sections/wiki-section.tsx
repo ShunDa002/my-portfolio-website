@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { Maximize2 } from 'lucide-react';
 import { getWikiGraph } from '@/lib/wiki/pipeline';
 import { WikiGraphView } from '@/components/wiki/WikiGraphView';
+import { Card } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 export async function WikiSection() {
   const result = await getWikiGraph();
@@ -21,9 +24,9 @@ export async function WikiSection() {
       </div>
 
       {/* Framed Window Container occupying 70% screen width */}
-      <div
+      <Card
         data-testid="wiki-window-frame"
-        className="w-[70vw] max-w-[70vw] mx-auto rounded-2xl overflow-hidden border border-slate-800/80 bg-slate-950/70 backdrop-blur-md shadow-2xl relative flex flex-col"
+        className="w-[70vw] max-w-[70vw] mx-auto rounded-2xl overflow-hidden border border-slate-800/80 bg-slate-950/70 backdrop-blur-md shadow-2xl relative flex flex-col p-0"
       >
         {/* Window Chrome Titlebar */}
         <div className="flex items-center justify-between px-4 py-3 bg-slate-900/90 border-b border-slate-800/80 select-none z-20">
@@ -43,26 +46,32 @@ export async function WikiSection() {
             </span>
 
             {result.status === 'success' && (
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 flex items-center gap-1">
+              <Badge variant="glow" className="flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
                 {result.data.nodes.length} nodes
-              </span>
+              </Badge>
             )}
           </div>
 
           {/* Expand Icon Button linking to /wiki */}
           <div className="flex items-center gap-2">
-            <Link
-              href="/wiki"
-              aria-label="Expand to full wiki page"
-              title="Expand to full page"
-              className="p-1.5 rounded-lg text-slate-400 hover:text-cyan-glow hover:bg-slate-800/60 transition-colors flex items-center gap-1.5 text-xs focus-visible:outline-cyan-glow"
+            <Button
+              asChild
+              variant="ghost"
+              size="sm"
+              className="p-1.5 h-auto rounded-lg text-slate-400 hover:text-cyan-glow hover:bg-slate-800/60 transition-colors flex items-center gap-1.5 text-xs"
             >
-              <span className="hidden md:inline font-mono text-[11px] text-slate-400 hover:text-slate-200">
-                Expand
-              </span>
-              <Maximize2 className="w-4 h-4" />
-            </Link>
+              <Link
+                href="/wiki"
+                aria-label="Expand to full wiki page"
+                title="Expand to full page"
+              >
+                <span className="hidden md:inline font-mono text-[11px] text-slate-400 hover:text-slate-200">
+                  Expand
+                </span>
+                <Maximize2 className="w-4 h-4" />
+              </Link>
+            </Button>
           </div>
         </div>
 
@@ -97,16 +106,19 @@ export async function WikiSection() {
               className="w-full h-full flex flex-col items-center justify-center p-6 text-center"
             >
               <p className="text-slate-300 text-sm max-w-md mb-4">{result.message}</p>
-              <Link
-                href="/wiki"
+              <Button
+                asChild
+                variant="outline"
                 className="px-4 py-2 rounded-xl bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 text-xs hover:bg-cyan-500/30 transition-colors"
               >
-                Open Wiki Page →
-              </Link>
+                <Link href="/wiki">
+                  Open Wiki Page →
+                </Link>
+              </Button>
             </div>
           )}
         </div>
-      </div>
+      </Card>
     </section>
   );
 }
