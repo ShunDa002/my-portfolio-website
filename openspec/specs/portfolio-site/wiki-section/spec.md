@@ -1,7 +1,7 @@
 # portfolio-site/wiki-section Specification
 
 ## Purpose
-Provides a dedicated home-page section presenting an interactive, zoomable preview window of the LLM Wiki knowledge graph with direct expansion to the dedicated `/wiki` page.
+Provides a dedicated home-page section presenting an interactive, zoomable knowledge graph window of the LLM Wiki vault.
 
 ## Requirements
 
@@ -14,21 +14,13 @@ The root page SHALL display a dedicated wiki graph section anchored with `id="wi
 - **THEN** the section renders with a title and subtitle introducing the LLM Wiki knowledge graph
 - **AND** the section content aligns with the vertical spacing rhythm of neighboring sections
 
-### Requirement: Interactive window frame with expand control
+### Requirement: Interactive window frame
 
-The wiki graph section SHALL render a framed window container occupying 70% of the viewport width, featuring a titlebar with window indicators, title, and an expand icon control located at the top-right corner that redirects the visitor to the full `/wiki` route.
+The wiki graph section SHALL render a framed window container occupying 70% of the viewport width, featuring a titlebar with window indicators, title, and node count badge. The section SHALL present the knowledge graph directly within the window without requiring or linking to a separate graph page.
 
 #### Scenario: Window occupies 70% screen width
 - **WHEN** a visitor views the wiki graph section
 - **THEN** the framed window occupies 70% of the viewport width (`w-[70vw]` / 70% width centered) to provide an expansive interactive canvas
-
-#### Scenario: Visitor clicks the expand icon
-- **WHEN** a visitor clicks or activates the expand control in the top-right corner of the window
-- **THEN** the browser navigates to `/wiki`
-
-#### Scenario: Expand control accessibility
-- **WHEN** a visitor inspects or navigates the expand control with keyboard or assistive technology
-- **THEN** the control provides an accessible label indicating that it expands to the full wiki page
 
 ### Requirement: Embedded zoomable knowledge graph visualization
 

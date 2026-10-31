@@ -1,14 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowUpRight, Terminal } from "lucide-react";
 import { projects, type Project } from "@/constant/projects_list";
 import { getYouTubeEmbedUrl } from "@/lib/video";
-import { DialogVideoPlayer } from "@/components/sections/dialog-video-player";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
+import { useLoading } from "@/components/providers/loading-provider";
 import {
   Dialog,
   DialogContent,
@@ -19,6 +19,15 @@ import {
 
 export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const { registerVideo, notifyVideoLoaded } = useLoading();
+
+  useEffect(() => {
+    projects.forEach((project) => {
+      if (project.video && getYouTubeEmbedUrl(project.video)) {
+        registerVideo(project.title);
+      }
+    });
+  }, [registerVideo]);
 
   return (
     <section
@@ -65,6 +74,7 @@ export const Projects = () => {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
+                    onLoad={() => notifyVideoLoaded(project.title)}
                   />
                 ) : (
                   <div className="w-full h-full bg-linear-to-br from-slate-900 via-midnight to-slate-950 flex flex-col items-center justify-center p-4 text-center">
@@ -111,22 +121,52 @@ export const Projects = () => {
       >
         <DialogContent className="max-w-5xl w-[94vw] max-h-[90vh] overflow-y-auto p-6 sm:p-8 bg-slate-900/95 backdrop-blur-2xl border-slate-700/60 shadow-2xl shadow-black/80">
           {selectedProject && (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start pt-2">
-              {/* Dominant 16:9 Video Column */}
-              <div className="lg:col-span-7 w-full flex flex-col space-y-3">
-                <AspectRatio
-                  ratio={16 / 9}
-                  className="relative w-full rounded-xl overflow-hidden bg-slate-950 border border-slate-700/70 shadow-2xl"
-                >
-                  <DialogVideoPlayer
-                    videoUrl={selectedProject.video}
-                    title={selectedProject.title}
-                  />
-                </AspectRatio>
-              </div>
+            (() => {
+              const dialogEmbedUrl = selectedProject.video
+                ? getYouTubeEmbedUrl(selectedProject.video, {
+                  autoplay: true,
+                  mute: true,
+                  loop: false,
+                  controls: true,
+                  disablekb: false,
+                  modestbranding: true,
+                  rel: false,
+                })
+                : null;
 
-              {/* Narrative & Details Column */}
-              <div className="lg:col-span-5 flex flex-col justify-between space-y-6 h-full">
+              return (
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start pt-2">
+                  {/* Dominant 16:9 Video Column */}
+                  <div className="lg:col-span-7 w-full flex flex-col space-y-3">
+                    <AspectRatio
+                      ratio={16 / 9}
+                      className="relative w-full rounded-xl overflow-hidden bg-slate-950 border border-slate-700/70 shadow-2xl"
+                    >
+                      {dialogEmbedUrl ? (
+                        <iframe
+                          src={dialogEmbedUrl}
+                          title={`${selectedProject.title} demonstration video player`}
+                          className="w-full h-full border-0"
+                          tabIndex={-1}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-linear-to-br from-slate-900 via-midnight to-slate-950 flex flex-col items-center justify-center p-6 text-center">
+                          <div className="p-4 rounded-full bg-cyan-950/60 border border-cyan-800/60 mb-3 shadow-lg shadow-cyan-950/40">
+                            <Terminal className="w-12 h-12 text-cyan-glow" />
+                          </div>
+                          <span className="text-sm font-mono text-slate-300">
+                            Demonstration available in repository
+                          </span>
+                        </div>
+                      )}
+                    </AspectRatio>
+                  </div>
+
+                  {/* Narrative & Details Column */}
+                  <div className="lg:col-span-5 flex flex-col justify-between space-y-6 h-full">
                     <div className="space-y-4">
                       <DialogHeader className="text-left space-y-2">
                         <DialogTitle className="text-2xl sm:text-3xl font-bold text-white tracking-wide">
@@ -147,9 +187,26 @@ export const Projects = () => {
                     </div>
 
                     <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between sm:justify-start gap-4">
+                      {selectedProject.demo && (
+                        <Button
+                          asChild
+                          variant="primary"
+                          size="default"
+                          className="group inline-flex items-center gap-2"
+                        >
+                          <a
+                            href={selectedProject.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <span>View demo</span>
+                            <ArrowUpRight className="w-4 h-4 text-midnight group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                          </a>
+                        </Button>
+                      )}
                       <Button
                         asChild
-                        variant="primary"
+                        variant={selectedProject.demo ? "secondary" : "primary"}
                         size="default"
                         className="group inline-flex items-center gap-2"
                       >
@@ -159,14 +216,22 @@ export const Projects = () => {
                           rel="noopener noreferrer"
                         >
                           <span>View on GitHub</span>
-                          <ArrowUpRight className="w-4 h-4 text-midnight group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                          <ArrowUpRight
+                            className={
+                              selectedProject.demo
+                                ? "w-4 h-4 text-slate-400 group-hover:text-cyan-glow group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                                : "w-4 h-4 text-midnight group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                            }
+                          />
                         </a>
                       </Button>
                     </div>
                   </div>
                 </div>
-              )}
-            </DialogContent>
+              );
+            })()
+          )}
+        </DialogContent>
       </Dialog>
     </section>
   );

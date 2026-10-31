@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { waitForLoaderDismiss } from './helpers/wait-for-loader';
 
 test.describe('Page Shell Scenarios (spec.md validation)', () => {
   test('Scenario: Visitor loads the site and navigates sections', async ({ page }) => {
@@ -11,31 +12,57 @@ test.describe('Page Shell Scenarios (spec.md validation)', () => {
     await expect(page.locator('#contact')).toBeAttached();
   });
 
-  test('Scenario: Direct section paths return not-found (404)', async ({ page }) => {
+  test('Scenario: Direct section paths and non-existent routes return not-found (404)', async ({ page }) => {
     const resAbout = await page.goto('/about');
     expect(resAbout?.status()).toBe(404);
 
     const resProjects = await page.goto('/projects');
     expect(resProjects?.status()).toBe(404);
-  });
 
-  test('Scenario: Defined non-section route /wiki returns 200', async ({ page }) => {
     const resWiki = await page.goto('/wiki');
-    expect(resWiki?.status()).toBe(200);
-    await expect(page.locator('header a[href="/wiki"]')).toBeVisible();
+    expect(resWiki?.status()).toBe(404);
   });
 
-  test('Scenario: Navigation between root page and /wiki', async ({ page }) => {
+  test('Scenario: Navigation from header to wiki section', async ({ page }) => {
     await page.goto('/');
+    await waitForLoaderDismiss(page);
 
-    // Activate wiki navigation link from root page
-    const wikiLink = page.locator('header a[href="/wiki"]');
+    const wikiLink = page.locator('header a[href="/#wiki"]');
+    await expect(wikiLink).toBeVisible();
     await wikiLink.click();
-    await expect(page).toHaveURL(/\/wiki/);
+    await expect(page).toHaveURL(/\/#wiki/);
+  });
 
-    // From /wiki, use navigation to return to root page sections
-    const aboutLink = page.locator('header a[href="/#about"]');
-    await aboutLink.click();
-    await expect(page).toHaveURL(/\/#about/);
+  test('Scenario: Re-clicking header navigation link after scrolling scrolls back to target section', async ({ page }) => {
+    await page.goto('/');
+    await waitForLoaderDismiss(page);
+
+    const skillsLink = page.locator('header a[href="/#skills"]');
+    await expect(skillsLink).toBeVisible();
+    await skillsLink.click();
+    await expect(page).toHaveURL(/\/#skills/);
+
+    // Verify scrolled down to skills section
+    await page.waitForFunction(() => {
+      const el = document.getElementById('skills');
+      if (!el) return false;
+      const rect = el.getBoundingClientRect();
+      return Math.abs(rect.top) < 150;
+    });
+
+    // Manually scroll away to top of page
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+    await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+
+    // Click Skills link again while URL already ends with /#skills
+    await skillsLink.click();
+
+    // Verify page scrolls back to skills section
+    await page.waitForFunction(() => {
+      const el = document.getElementById('skills');
+      if (!el) return false;
+      const rect = el.getBoundingClientRect();
+      return Math.abs(rect.top) < 150;
+    });
   });
 });

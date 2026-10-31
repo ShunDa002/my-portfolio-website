@@ -7,6 +7,7 @@ export type Project = {
   // The card renders a designed fallback panel instead.
   // image?: string;
   video?: string;
+  demo?: string;
 };
 
 export const projects: Project[] = [
@@ -18,6 +19,7 @@ export const projects: Project[] = [
     githubLink: "https://github.com/ShunDa002/deepfake-detector-website",
     // image: "/images/projects/deepfake-detector.png",
     video: "https://youtu.be/kswDfgziS9I?si=7uktLUcZgXQ1tN0X",
+    demo: "https://deepfake-web-nine.vercel.app",
   },
   {
     title: "Malaysian SPM History (Sejarah) RAG",
@@ -27,6 +29,7 @@ export const projects: Project[] = [
     githubLink: "https://github.com/ShunDa002/sejarah-rag-website",
     // image: "/images/projects/sejarah-rag.png",
     video: "https://youtu.be/lBsQCQDbgOE?si=QmkUZV7_ORDlZeJz",
+    demo: "https://sejarah-rag-website.vercel.app",
   },
   {
     title: "Yahoo Finance MCP",

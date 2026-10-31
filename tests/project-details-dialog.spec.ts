@@ -34,7 +34,12 @@ test.describe('Featured Projects Details Dialog Scenarios', () => {
     await expect(iframe).toBeVisible();
     await expect(iframe).toHaveAttribute('src', /youtube-nocookie\.com\/embed/);
 
-    // GitHub action button should be present with correct link
+    // Demo and GitHub action buttons should be present with correct links
+    const demoBtn = dialog.locator('a', { hasText: 'View demo' });
+    await expect(demoBtn).toBeVisible();
+    await expect(demoBtn).toHaveAttribute('href', 'https://deepfake-web-nine.vercel.app');
+    await expect(demoBtn).toHaveAttribute('target', '_blank');
+
     const githubBtn = dialog.locator('a', { hasText: 'View on GitHub' });
     await expect(githubBtn).toBeVisible();
     await expect(githubBtn).toHaveAttribute('href', 'https://github.com/ShunDa002/deepfake-detector-website');
@@ -72,6 +77,11 @@ test.describe('Featured Projects Details Dialog Scenarios', () => {
     // Should render fallback panel instead of iframe
     await expect(dialog.locator('iframe')).toHaveCount(0);
     await expect(dialog.getByText('Demonstration available in repository')).toBeVisible();
+
+    // Projects without demo should not render the View demo button
+    await expect(dialog.locator('a', { hasText: 'View demo' })).toHaveCount(0);
+    const githubBtn = dialog.locator('a', { hasText: 'View on GitHub' });
+    await expect(githubBtn).toBeVisible();
 
     // Close dialog
     await page.keyboard.press('Escape');

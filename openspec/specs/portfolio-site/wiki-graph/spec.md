@@ -1,44 +1,29 @@
 # portfolio-site/wiki-graph Specification
 
 ## Purpose
-Defines the `/wiki` page: an interactive graph of the LLM Wiki vault, read live from its public GitHub repository, that lets a visitor see how an AI agent's knowledge base is structured and inspect any single page without leaving the portfolio.
+Defines the interactive knowledge graph visualization of the LLM Wiki vault, read live from its public GitHub repository, that lets a visitor see how an AI agent's knowledge base is structured and inspect any single page within the portfolio.
 
 ## Requirements
 
-### Requirement: Wiki graph route
-
-The site SHALL serve a wiki graph page at `/wiki`. The page SHALL present the graph as its primary content, occupying the available viewport below the site navigation, and SHALL carry a document title and description identifying it as the LLM Wiki knowledge graph.
-
-#### Scenario: Visitor opens the wiki page
-
-- **WHEN** a visitor requests `/wiki`
-- **THEN** the site returns the wiki graph page
-- **AND** the graph is the page's primary content within the initial viewport, with no scrolling required to see it
-
-#### Scenario: Crawler reads the wiki page metadata
-
-- **WHEN** a crawler reads the wiki page's document head
-- **THEN** a non-empty title and description identifying the LLM Wiki knowledge graph are present
-
 ### Requirement: Live vault retrieval with bounded staleness
 
-The page SHALL derive its graph from the current contents of the `wiki/` directory of the public repository at `github.com/ShunDa002/llm-wiki3`, retrieved over the network rather than from a copy stored in this project. Retrieved vault content SHALL be cached and served to subsequent visitors, and the cached graph SHALL be no more than 60 minutes stale. The number of outbound requests made to serve the page SHALL be bounded by the number of vault pages plus one directory listing, and SHALL NOT scale with the number of visitors within a cache window.
+The graph pipeline SHALL derive its graph from the current contents of the `wiki/` directory of the public repository at `github.com/ShunDa002/llm-wiki3`, retrieved over the network rather than from a copy stored in this project. Retrieved vault content SHALL be cached and served to subsequent visitors, and the cached graph SHALL be no more than 60 minutes stale. The number of outbound requests made to serve the graph SHALL be bounded by the number of vault pages plus one directory listing, and SHALL NOT scale with the number of visitors within a cache window.
 
 #### Scenario: Agent adds a page to the vault
 
-- **WHEN** the vault gains a new page and a visitor loads `/wiki` after the cache window has elapsed
+- **WHEN** the vault gains a new page and a visitor loads the wiki graph after the cache window has elapsed
 - **THEN** the new page appears as a node in the graph without the site being rebuilt or redeployed
 
 #### Scenario: Many visitors load the page in one cache window
 
-- **WHEN** repeated requests for `/wiki` arrive within the same cache window
+- **WHEN** repeated requests for the wiki graph arrive within the same cache window
 - **THEN** they are served from the cached graph
 - **AND** no additional requests are made to the vault's host for those visitors
 
 #### Scenario: Vault content is not vendored
 
 - **WHEN** this project's source tree is inspected for vault markdown
-- **THEN** no copy of the vault's pages is present, because the page reads them from the repository at request time
+- **THEN** no copy of the vault's pages is present, because the graph reads them from the repository at request time
 
 ### Requirement: Nodes derived from vault pages
 

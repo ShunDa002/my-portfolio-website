@@ -1,9 +1,18 @@
 import { test, expect } from '@playwright/test';
-import { setupWikiMockRoutes } from './helpers/wiki-routes';
 
 test.describe('Wiki Graph Section on Root Page', () => {
+  test.beforeEach(async ({ page }) => {
+    // Intercept remote graph endpoint
+    await page.route('https://wiki-graph.tay-shon-da1.workers.dev/**', async (route) => {
+      await route.fulfill({
+        status: 200,
+        contentType: 'text/html',
+        body: '<html><body><div id="mock-graph">Mock Graph Content</div></body></html>',
+      });
+    });
+  });
+
   test('renders wiki graph section and occupies ~70% viewport width', async ({ page }) => {
-    await setupWikiMockRoutes(page);
     await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto('/');
 
@@ -26,88 +35,23 @@ test.describe('Wiki Graph Section on Root Page', () => {
     }
   });
 
-  test('clicking the expand button in window header redirects to /wiki', async ({ page }) => {
-    await setupWikiMockRoutes(page);
-    await page.goto('/');
-
-    const expandBtn = page.locator('#wiki a[aria-label="Expand to full wiki page"]');
-    await expect(expandBtn).toBeVisible();
-    await expandBtn.click();
-
-    await expect(page).toHaveURL(/\/wiki/);
-    await expect(page.locator('svg[role="img"]')).toBeVisible();
-  });
-
-  test('embedded graph displays nodes and supports zoom controls', async ({ page }) => {
-    await setupWikiMockRoutes(page);
+  test('embedded graph displays iframe with host action controls', async ({ page }) => {
     await page.goto('/');
 
     const frame = page.locator('[data-testid="wiki-window-frame"]');
     await expect(frame).toBeVisible();
 
-    const svg = frame.locator('svg[role="img"]');
-    await expect(svg).toBeVisible();
+    const iframe = frame.locator('iframe');
+    await expect(iframe).toBeVisible();
 
-    // Nodes and edges render
-    const nodes = svg.locator('g.nodes > g[role="button"]');
-    const nodeCount = await nodes.count();
-    expect(nodeCount).toBeGreaterThan(0);
-
-    // Zoom controls inside window
-    const zoomInBtn = frame.locator('button[aria-label="Zoom in"]');
-    const zoomOutBtn = frame.locator('button[aria-label="Zoom out"]');
-    const resetBtn = frame.locator('button[aria-label="Reset view"]');
-
-    await expect(zoomInBtn).toBeVisible();
-    await expect(zoomOutBtn).toBeVisible();
-    await expect(resetBtn).toBeVisible();
-
-    const initialViewBox = await svg.getAttribute('viewBox');
-    await zoomInBtn.click();
-    const zoomedViewBox = await svg.getAttribute('viewBox');
-    expect(zoomedViewBox).not.toBe(initialViewBox);
-
-    await resetBtn.click();
-    const resetViewBox = await svg.getAttribute('viewBox');
-    expect(resetViewBox).toBe(initialViewBox);
+    const controls = frame.locator('[data-testid="graph-embed-controls"]');
+    await expect(controls).toBeVisible();
+    await expect(controls.getByRole('button', { name: /Reload/i })).toBeVisible();
+    await expect(controls.getByRole('button', { name: /Fullscreen/i })).toBeVisible();
+    await expect(controls.getByRole('link', { name: /Open/i })).toBeVisible();
   });
 
-  test('wheel scrolling inside graph zooms graph and prevents window scrolling, while scrolling outside scrolls page', async ({ page }) => {
-    await setupWikiMockRoutes(page);
-    await page.goto('/');
-
-    const frame = page.locator('[data-testid="wiki-window-frame"]');
-    await frame.scrollIntoViewIfNeeded();
-
-    const initialScrollY = await page.evaluate(() => window.scrollY);
-    const svg = frame.locator('svg[role="img"]');
-    await expect(svg).toBeVisible();
-
-    const initialViewBox = await svg.getAttribute('viewBox');
-
-    // Scroll wheel over SVG
-    await svg.hover();
-    await page.mouse.wheel(0, 100);
-    await page.waitForTimeout(100);
-
-    const zoomedViewBox = await svg.getAttribute('viewBox');
-    expect(zoomedViewBox).not.toBe(initialViewBox);
-
-    // Window scroll position should NOT have changed because preventDefault was called on non-passive listener
-    const scrollYAfterGraphWheel = await page.evaluate(() => window.scrollY);
-    expect(scrollYAfterGraphWheel).toBe(initialScrollY);
-
-    // Move mouse outside the window to header area and scroll
-    await page.mouse.move(10, 10);
-    await page.mouse.wheel(0, 200);
-    await page.waitForTimeout(100);
-
-    const scrollYAfterOutsideWheel = await page.evaluate(() => window.scrollY);
-    expect(scrollYAfterOutsideWheel).not.toBe(scrollYAfterGraphWheel);
-  });
-
-  test('gracefully contains failure state without breaking other sections', async ({ page }) => {
-    await setupWikiMockRoutes(page, { simulateFailure: 'http_500' });
+  test('root page sections remain fully intact with wiki embed', async ({ page }) => {
     await page.goto('/');
 
     // Entire root page still intact
@@ -117,9 +61,5 @@ test.describe('Wiki Graph Section on Root Page', () => {
     await expect(page.locator('#projects')).toBeAttached();
     await expect(page.locator('#wiki')).toBeAttached();
     await expect(page.locator('#contact')).toBeAttached();
-
-    // Fallback message rendered inside window frame
-    const frame = page.locator('[data-testid="wiki-window-frame"]');
-    await expect(frame.locator('[data-testid="wiki-window-error"]')).toBeVisible();
   });
 });

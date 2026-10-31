@@ -46,7 +46,7 @@ Project entries SHALL be read from one editable list that is the sole source of 
 
 ### Requirement: Project entry fields
 
-Each project entry SHALL carry a title, a list of technology tags, and a source repository URL, all of which are required. A demonstration video URL (`video`) SHALL be supported. Static preview images SHALL NOT be rendered in the card component, and any image content SHALL be completely removed from the card layout. A description field MAY remain on the data model for documentation purposes, but SHALL NOT be rendered on the card. The entry shape SHALL be declared as an explicit type so that a missing or misspelled required field is rejected at build time rather than surfacing as a rendering fault.
+Each project entry SHALL carry a title, a list of technology tags, and a source repository URL, all of which are required. A demonstration video URL (`video`) and an optional live demonstration URL (`demo`) SHALL be supported. Static preview images SHALL NOT be rendered in the card component, and any image content SHALL be completely removed from the card layout. A description field MAY remain on the data model for documentation purposes, but SHALL NOT be rendered on the card. The entry shape SHALL be declared as an explicit type so that a missing or misspelled required field is rejected at build time rather than surfacing as a rendering fault.
 
 #### Scenario: Entry is missing a preview image
 - **WHEN** an entry contains an image reference, omits video, or supplies an empty video reference
@@ -57,7 +57,7 @@ Each project entry SHALL carry a title, a list of technology tags, and a source 
 #### Scenario: Entry field set is validated
 - **WHEN** the project list is edited
 - **THEN** an entry missing any required field fails the build, so the error surfaces before deployment rather than in front of a visitor
-- **AND** omitting only the optional video reference does not fail the build
+- **AND** omitting only the optional video or demo reference does not fail the build
 
 #### Scenario: Fallback panel is recognisably deliberate
 - **WHEN** a card renders its fallback panel
@@ -83,11 +83,22 @@ Each card SHALL display, in this order: the embedded demonstration video (or fal
 
 ### Requirement: Project details dialog
 
-The site SHALL provide an accessible modal dialog using Shadcn Dialog primitives when a project card is activated. The dialog SHALL present a horizontal, video-dominant layout with an enlarged 16:9 demonstration video player (or fallback panel), the project title, full project description, technology tags, and a GitHub repository button. The dialog SHALL support keyboard navigation, focus containment, and Escape-key or close-button dismissal.
+The site SHALL provide an accessible modal dialog using Shadcn Dialog primitives when a project card is activated. The dialog SHALL present a horizontal, video-dominant layout with an enlarged 16:9 demonstration video player (or fallback panel), the project title, full project description, technology tags, and action links. When a project provides an active live demonstration link (`demo`), the dialog SHALL display a "View demo" button positioned immediately before the "View on GitHub" button. The "View demo" button SHALL be styled as the primary call to action (filled cyan glow), while "View on GitHub" SHALL be styled as a secondary action (translucent glass), with both opening their destinations in new tabs (`target="_blank"`). When a project does not provide a `demo` link, the "View demo" button SHALL be omitted and "View on GitHub" SHALL serve as the primary action. The dialog SHALL support keyboard navigation, focus containment, and Escape-key or close-button dismissal.
 
 #### Scenario: Visitor opens dialog on tablet or desktop
 - **WHEN** a visitor activates a project card on a tablet or desktop viewport
-- **THEN** a wide modal dialog opens with a horizontal layout where the enlarged video occupies the dominant area alongside project details, description, tags, and repository link
+- **THEN** a wide modal dialog opens with a horizontal layout where the enlarged video occupies the dominant area alongside project details, description, tags, and action buttons
+
+#### Scenario: Visitor opens dialog for project with live demonstration
+- **WHEN** a visitor activates a project card for a project with an active `demo` link
+- **THEN** the dialog renders a "View demo" button positioned immediately before the "View on GitHub" button
+- **AND** the "View demo" button links to the project demo URL with `target="_blank"` using primary action styling
+- **AND** the "View on GitHub" button links to the source repository using secondary action styling
+
+#### Scenario: Visitor opens dialog for project without live demonstration
+- **WHEN** a visitor activates a project card for a project that omits a `demo` link
+- **THEN** the "View demo" button is not rendered
+- **AND** the "View on GitHub" button is rendered using primary action styling
 
 #### Scenario: Visitor views project without video in dialog
 - **WHEN** a visitor opens the details dialog for a project with no demonstration video
