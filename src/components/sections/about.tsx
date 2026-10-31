@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
 
 export const About = () => {
   return (
@@ -12,25 +13,27 @@ export const About = () => {
             About Me
           </h2>
 
-          <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 p-8 rounded-2xl relative overflow-hidden group hover:border-cyan-glow/20 transition-colors">
+          <Card className="p-8 relative overflow-hidden group hover:border-cyan-glow/20 transition-colors">
             {/* Glow effect */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-glow/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
 
-            <p className="text-slate-300 leading-relaxed text-lg">
-              I am a final year <strong>Software Engineering</strong> student at{" "}
-              <span className="text-cyan-200">
-                Universiti Malaysia Pahang Al-Sultan Abdullah
-              </span>
-              , driven by a deep passion for <strong>Agentic AI</strong> and its
-              applications in FinTech. My work centers on building intelligent
-              systems capable of autonomous reasoning and complex
-              problem-solving. Whether I am fine-tuning{" "}
-              <strong>Computer Vision</strong> models for deepfake detection or
-              enabling LLMs to autonomously analyze real-time stock market data
-              , I am dedicated to translating theoretical AI into practical,
-              high-impact solutions.
-            </p>
-          </div>
+            <CardContent className="p-0">
+              <p className="text-slate-300 leading-relaxed text-lg">
+                I am a final year <strong>Software Engineering</strong> student at{" "}
+                <span className="text-cyan-200">
+                  Universiti Malaysia Pahang Al-Sultan Abdullah
+                </span>
+                , driven by a deep passion for <strong>Agentic AI</strong> and its
+                applications in FinTech. My work centers on building intelligent
+                systems capable of autonomous reasoning and complex
+                problem-solving. Whether I am fine-tuning{" "}
+                <strong>Computer Vision</strong> models for deepfake detection or
+                enabling LLMs to autonomously analyze real-time stock market data
+                , I am dedicated to translating theoretical AI into practical,
+                high-impact solutions.
+              </p>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Photo Column (Placeholder for Phase 1) */}

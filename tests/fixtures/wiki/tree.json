@@ -1,0 +1,1348 @@
+{
+  "sha": "34a5075c27412574ac31cfc40e4bad59b70c5268",
+  "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/34a5075c27412574ac31cfc40e4bad59b70c5268",
+  "tree": [
+    {
+      "path": ".claude",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "26aa036aabaa228a87771252e77e7dfb1e6a40b6",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/26aa036aabaa228a87771252e77e7dfb1e6a40b6"
+    },
+    {
+      "path": ".claude/commands",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "874c4270ad3a116332c439b76e4f7611d048576a",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/874c4270ad3a116332c439b76e4f7611d048576a"
+    },
+    {
+      "path": ".claude/commands/bridge-apply.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8dc317af55ec1c5bb5644f5f49b1557cf694d53",
+      "size": 543,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/f8dc317af55ec1c5bb5644f5f49b1557cf694d53"
+    },
+    {
+      "path": ".claude/commands/bridge-impact.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17dc199c3999c4ffe765a9a9f7dba87e39c87993",
+      "size": 454,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/17dc199c3999c4ffe765a9a9f7dba87e39c87993"
+    },
+    {
+      "path": ".claude/commands/bridge-promote.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e20b48da0bc7956ecfa5d93d4a7cf49cd7a89d7",
+      "size": 445,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/2e20b48da0bc7956ecfa5d93d4a7cf49cd7a89d7"
+    },
+    {
+      "path": ".claude/commands/wiki-find-duplicates.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de74d14629fdb6d1e6efd0bd78359576d0063045",
+      "size": 676,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/de74d14629fdb6d1e6efd0bd78359576d0063045"
+    },
+    {
+      "path": ".claude/commands/wiki-ingest.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "457b2ff983554887d65ba843d981f0dbe7128f80",
+      "size": 720,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/457b2ff983554887d65ba843d981f0dbe7128f80"
+    },
+    {
+      "path": ".claude/commands/wiki-lint.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "edd3f0c24ceaee0feb61958e33846aeb19e1c7f1",
+      "size": 708,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/edd3f0c24ceaee0feb61958e33846aeb19e1c7f1"
+    },
+    {
+      "path": ".claude/commands/wiki-query.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "386dfb5b65608aaa271e585eb9cf2935c0cc9897",
+      "size": 557,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/386dfb5b65608aaa271e585eb9cf2935c0cc9897"
+    },
+    {
+      "path": ".claude/commands/wiki-trace.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fda24725ad1b54b09c69ed3ee90e971a975cbc6e",
+      "size": 585,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/fda24725ad1b54b09c69ed3ee90e971a975cbc6e"
+    },
+    {
+      "path": ".claude/hooks",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4a478113f5ab35ba905e29eb059b2c285eb6589c",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/4a478113f5ab35ba905e29eb059b2c285eb6589c"
+    },
+    {
+      "path": ".claude/hooks/protect-raw.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ccc21a428192fe33198319ec81d80cf816b2450",
+      "size": 1427,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/0ccc21a428192fe33198319ec81d80cf816b2450"
+    },
+    {
+      "path": ".claude/settings.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fabeec58e1552edeb89bc75f2a3e8470aa31a60",
+      "size": 1010,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/2fabeec58e1552edeb89bc75f2a3e8470aa31a60"
+    },
+    {
+      "path": ".cursor",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6a5c29b2e4f5185dd28d3f68ded33efb2fd8abf7",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/6a5c29b2e4f5185dd28d3f68ded33efb2fd8abf7"
+    },
+    {
+      "path": ".cursor/rules",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "37c2af40ea52abe4d5ccad78e4e168d81238160c",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/37c2af40ea52abe4d5ccad78e4e168d81238160c"
+    },
+    {
+      "path": ".cursor/rules/vault-policy.mdc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "78475ec871f67fabffd71dc81045ca53c023446f",
+      "size": 1394,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/78475ec871f67fabffd71dc81045ca53c023446f"
+    },
+    {
+      "path": ".githooks",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0b7770d2c8e951e769249fda0e83e25ab1144a54",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/0b7770d2c8e951e769249fda0e83e25ab1144a54"
+    },
+    {
+      "path": ".githooks/pre-commit",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "c54a880b516afe569aa1a52b04aa0512f3817f85",
+      "size": 3969,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/c54a880b516afe569aa1a52b04aa0512f3817f85"
+    },
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "671dd59eaddde7d8ac421f21388faefb96d86962",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/671dd59eaddde7d8ac421f21388faefb96d86962"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "441c8b4a6d587375477a84b711d14ded31e0fd71",
+      "size": 1185,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/441c8b4a6d587375477a84b711d14ded31e0fd71"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "919b4dea89a6e426f2895bf032a9cb2ca1ebddf4",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/919b4dea89a6e426f2895bf032a9cb2ca1ebddf4"
+    },
+    {
+      "path": ".github/workflows/verify-vault.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13cb992e188cb228f3ffc32e8fc8731a769d8333",
+      "size": 1195,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/13cb992e188cb228f3ffc32e8fc8731a769d8333"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "690b4ef4ffe9b757d7530ad36895bdde14017203",
+      "size": 336,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/690b4ef4ffe9b757d7530ad36895bdde14017203"
+    },
+    {
+      "path": ".obsidian",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dc75c890594faa5dcfefa5e5c41f0ad23f3ac9d3",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/dc75c890594faa5dcfefa5e5c41f0ad23f3ac9d3"
+    },
+    {
+      "path": ".obsidian/app.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e26dfeeb6e641a33dae4961196235bdb965b21b",
+      "size": 2,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/9e26dfeeb6e641a33dae4961196235bdb965b21b"
+    },
+    {
+      "path": ".obsidian/appearance.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e26dfeeb6e641a33dae4961196235bdb965b21b",
+      "size": 2,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/9e26dfeeb6e641a33dae4961196235bdb965b21b"
+    },
+    {
+      "path": ".obsidian/core-plugins.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "639b90da7172bebbc1a65e30ed0a1c611b5b26dc",
+      "size": 696,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/639b90da7172bebbc1a65e30ed0a1c611b5b26dc"
+    },
+    {
+      "path": ".obsidian/graph.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f142383e9cb36e5ae23efbdfccfcb73e868ef063",
+      "size": 523,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/f142383e9cb36e5ae23efbdfccfcb73e868ef063"
+    },
+    {
+      "path": "AGENTS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14df1c89b81a8f7bbfe26f0279dc27741120344d",
+      "size": 9302,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/14df1c89b81a8f7bbfe26f0279dc27741120344d"
+    },
+    {
+      "path": "CLAUDE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46563ae9404c5d2f50594683fdb80290b5aa37d5",
+      "size": 893,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/46563ae9404c5d2f50594683fdb80290b5aa37d5"
+    },
+    {
+      "path": "GEMINI.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "28a6e7bee1a974336bf633596d75615e23ff7298",
+      "size": 1663,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/28a6e7bee1a974336bf633596d75615e23ff7298"
+    },
+    {
+      "path": "LLM-Wiki-and-OKF-Implementation-Plan.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "28835872a9687f596921bd8d13ee6e42f5250d19",
+      "size": 45540,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/28835872a9687f596921bd8d13ee6e42f5250d19"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e87f0b6d960381fb86cea5d522927870e16e0f7b",
+      "size": 4715,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/e87f0b6d960381fb86cea5d522927870e16e0f7b"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "281cdb092f7c1d294fdfb7ba84b0b10803b62e4d",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/281cdb092f7c1d294fdfb7ba84b0b10803b62e4d"
+    },
+    {
+      "path": "docs/agent-portability.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "853780f6f875bbdd1b3c6f2713246bf9414ec6ce",
+      "size": 23414,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/853780f6f875bbdd1b3c6f2713246bf9414ec6ce"
+    },
+    {
+      "path": "docs/phase-0",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c16fbaf8c09c0ecdfed424657ae1121ead1c0954",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/c16fbaf8c09c0ecdfed424657ae1121ead1c0954"
+    },
+    {
+      "path": "docs/phase-0/baseline-metrics.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a9b2e0e01b628a42e4a488cdf35ea2de610abbc8",
+      "size": 3174,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/a9b2e0e01b628a42e4a488cdf35ea2de610abbc8"
+    },
+    {
+      "path": "docs/phase-0/git-recovery-checklist.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eecd284b409ecdd0c0a03d3bba2b03cee20da4f9",
+      "size": 3385,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/eecd284b409ecdd0c0a03d3bba2b03cee20da4f9"
+    },
+    {
+      "path": "docs/phase-0/phase-0-report.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f9bb575704477c52702fd695f944f0af76bdcc8",
+      "size": 5210,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/2f9bb575704477c52702fd695f944f0af76bdcc8"
+    },
+    {
+      "path": "docs/phase-0/pilot-scope.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7f5a85f1c90d4bb1240162edaf9eb01eb7aae03a",
+      "size": 2018,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/7f5a85f1c90d4bb1240162edaf9eb01eb7aae03a"
+    },
+    {
+      "path": "docs/phase-0/privacy-policy.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfc2dcbcb7eada5127afc931ec20aecc53704e6e",
+      "size": 2660,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/bfc2dcbcb7eada5127afc931ec20aecc53704e6e"
+    },
+    {
+      "path": "docs/phase-0/recovery-test.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21dbd04568b990db0d756a81c1b35927137d7bef",
+      "size": 82,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/21dbd04568b990db0d756a81c1b35927137d7bef"
+    },
+    {
+      "path": "docs/phase-0/risk-matrix.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5d93ded3f9ab9efc71df0c9bb98f91a62de13e9",
+      "size": 3360,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/b5d93ded3f9ab9efc71df0c9bb98f91a62de13e9"
+    },
+    {
+      "path": "docs/phase-1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f5562e5703bf68c11fa7253987fd2bb3ead3b5b6",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/f5562e5703bf68c11fa7253987fd2bb3ead3b5b6"
+    },
+    {
+      "path": "docs/phase-1/status.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "563f7008a882c0b5aa7257dba24535cdd377e54f",
+      "size": 8520,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/563f7008a882c0b5aa7257dba24535cdd377e54f"
+    },
+    {
+      "path": "docs/phase-2",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "06b53b6bb460848664a9874f61e0ddb77d531059",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/06b53b6bb460848664a9874f61e0ddb77d531059"
+    },
+    {
+      "path": "docs/phase-2/mvp-failure-review.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15f9bc43790b45cdcb459668b8ecc18cc706099b",
+      "size": 8766,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/15f9bc43790b45cdcb459668b8ecc18cc706099b"
+    },
+    {
+      "path": "docs/phase-2/page-taxonomy.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c452d7bdfbdd98b3c9c6cc042f484937b8c16ead",
+      "size": 6038,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/c452d7bdfbdd98b3c9c6cc042f484937b8c16ead"
+    },
+    {
+      "path": "docs/phase-2/schema-test-suite.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "45a765c59bf8ee4c8048c712c114d9d065175f2d",
+      "size": 6080,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/45a765c59bf8ee4c8048c712c114d9d065175f2d"
+    },
+    {
+      "path": "docs/phase-2/status.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2055e50ca7ffaecc0d8ada771c08e723fb00c8ca",
+      "size": 10525,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/2055e50ca7ffaecc0d8ada771c08e723fb00c8ca"
+    },
+    {
+      "path": "docs/phase-3",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e5e71a701d4e8699f30af1760078f7b0f91719f6",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/e5e71a701d4e8699f30af1760078f7b0f91719f6"
+    },
+    {
+      "path": "docs/phase-3/okf-bridge.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3feae4631fb7734d3b8679e5442a816b39bc0899",
+      "size": 5266,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/3feae4631fb7734d3b8679e5442a816b39bc0899"
+    },
+    {
+      "path": "docs/phase-3/status.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35857c914ad7dc4084495355ce5f5303b84f299f",
+      "size": 20834,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/35857c914ad7dc4084495355ce5f5303b84f299f"
+    },
+    {
+      "path": "docs/phase-4",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bee7b46099c3bfe6293a066b44eabc83ff98dfbd",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/bee7b46099c3bfe6293a066b44eabc83ff98dfbd"
+    },
+    {
+      "path": "docs/phase-4/lint-layers.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d43049af48f11bc743c3052606f30d9c02c5106d",
+      "size": 13027,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/d43049af48f11bc743c3052606f30d9c02c5106d"
+    },
+    {
+      "path": "docs/phase-4/maintenance-log.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "243fe968f6c06197f375962ed9f44324fd87ff19",
+      "size": 4557,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/243fe968f6c06197f375962ed9f44324fd87ff19"
+    },
+    {
+      "path": "docs/phase-4/status.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26ee92c6f171f132e36afb210db2d5cacf3c75f7",
+      "size": 12431,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/26ee92c6f171f132e36afb210db2d5cacf3c75f7"
+    },
+    {
+      "path": "docs/session-summary.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ba079d3ea049792c639764509773597a4250f25",
+      "size": 53611,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/0ba079d3ea049792c639764509773597a4250f25"
+    },
+    {
+      "path": "error-tracking",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "167e7a3ee2538057418cb80088a0c4c2df46da7d",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/167e7a3ee2538057418cb80088a0c4c2df46da7d"
+    },
+    {
+      "path": "error-tracking/Antigravity Option 1 problems summary.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e482f842562590d46320062719eed21bd9e947f",
+      "size": 8414,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/8e482f842562590d46320062719eed21bd9e947f"
+    },
+    {
+      "path": "error-tracking/Option 1 test prompt.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb8e5574783d30e144071b563df002880641569a",
+      "size": 5333,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/fb8e5574783d30e144071b563df002880641569a"
+    },
+    {
+      "path": "error-tracking/Option 2 test prompt.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76a67e145b08504a9a2fcd9f1f8140242e8a1003",
+      "size": 7362,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/76a67e145b08504a9a2fcd9f1f8140242e8a1003"
+    },
+    {
+      "path": "error-tracking/Option 3 permission-boundary-test-report.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51c6080a50ff1eeb0aa574b3082a44153bb17b55",
+      "size": 7966,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/51c6080a50ff1eeb0aa574b3082a44153bb17b55"
+    },
+    {
+      "path": "error-tracking/Option 3 test prompt.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1267457d8e10b4f4d189e0604e15cff4415b2f0f",
+      "size": 10692,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/1267457d8e10b4f4d189e0604e15cff4415b2f0f"
+    },
+    {
+      "path": "error-tracking/Phase 2 quality-control test prompt.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "304f7635a2864c47df8dd07db6852bb7ddacde2b",
+      "size": 15331,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/304f7635a2864c47df8dd07db6852bb7ddacde2b"
+    },
+    {
+      "path": "error-tracking/Phase 2 quality-control-test-report.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e56093961a5e53f297eaf6f2e50f22d42e97c1e",
+      "size": 18418,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/4e56093961a5e53f297eaf6f2e50f22d42e97c1e"
+    },
+    {
+      "path": "error-tracking/Phase 3 okf-integration test prompt.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2a1098990f2036c1ed3396343db5049f47ecc27c",
+      "size": 23555,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/2a1098990f2036c1ed3396343db5049f47ecc27c"
+    },
+    {
+      "path": "error-tracking/Phase 3 okf-integration-test-report.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0076f16e5ce1f7c1056bc60f2bea2c4ebd8cb40c",
+      "size": 32595,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/0076f16e5ce1f7c1056bc60f2bea2c4ebd8cb40c"
+    },
+    {
+      "path": "error-tracking/Phase 3 re-verification test prompt.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3dbe4582db04fcafb2735f39bd4a1af9fd97887",
+      "size": 23905,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/f3dbe4582db04fcafb2735f39bd4a1af9fd97887"
+    },
+    {
+      "path": "error-tracking/Phase 3 re-verification-test-report.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0eedf68945ab61197d6c17fd445ac9f837da1985",
+      "size": 31890,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/0eedf68945ab61197d6c17fd445ac9f837da1985"
+    },
+    {
+      "path": "error-tracking/Phase 4 governance test prompt.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0424876c5eac081abfb10e169f46e28132abf2fb",
+      "size": 36005,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/0424876c5eac081abfb10e169f46e28132abf2fb"
+    },
+    {
+      "path": "error-tracking/Phase 4 governance-test-report.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2061bcb22510ba0b2df11783c24004f282239b65",
+      "size": 32865,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/2061bcb22510ba0b2df11783c24004f282239b65"
+    },
+    {
+      "path": "error-tracking/Structural gaps and remediation triage.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f562029cc2673476835907861fba68c7464f6788",
+      "size": 15226,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/f562029cc2673476835907861fba68c7464f6788"
+    },
+    {
+      "path": "error-tracking/permission-boundary-test-report.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "746a2c599a7f95c2ae456fcac8f7271cf1b2a0aa",
+      "size": 9617,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/746a2c599a7f95c2ae456fcac8f7271cf1b2a0aa"
+    },
+    {
+      "path": "okf",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "13674a61ffd52dd80aaac2d0d4db3c7ab0711994",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/13674a61ffd52dd80aaac2d0d4db3c7ab0711994"
+    },
+    {
+      "path": "okf/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "okf/decisions",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2af8e013379a8724ca4a978f576e4e335fab0b12",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/2af8e013379a8724ca4a978f576e4e335fab0b12"
+    },
+    {
+      "path": "okf/decisions/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "okf/decisions/Select Initial Retrieval Approach.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c872cb37f676e9ca038304df3c25b6c2dc5bb192",
+      "size": 2060,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/c872cb37f676e9ca038304df3c25b6c2dc5bb192"
+    },
+    {
+      "path": "okf/experiments",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "52d449135dd75452405f4f8fd241f4d730a9d4d8",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/52d449135dd75452405f4f8fd241f4d730a9d4d8"
+    },
+    {
+      "path": "okf/experiments/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "okf/experiments/Native Retrieval Benchmark.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32a09ebd58074f70ebbb390c95821e05d043aad1",
+      "size": 2658,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/32a09ebd58074f70ebbb390c95821e05d043aad1"
+    },
+    {
+      "path": "okf/projects",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "91c5af995a1b445165facca2d16aa22c2a25042e",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/91c5af995a1b445165facca2d16aa22c2a25042e"
+    },
+    {
+      "path": "okf/projects/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "okf/projects/LLM Wiki Pilot.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3ab4e4c36643939597b559f5a20cc9a2f7fe8e0",
+      "size": 1127,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/c3ab4e4c36643939597b559f5a20cc9a2f7fe8e0"
+    },
+    {
+      "path": "prompts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b9a941c3d9cc32fa9b2486a58474185296441040",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/b9a941c3d9cc32fa9b2486a58474185296441040"
+    },
+    {
+      "path": "prompts/bridge-apply.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c06eb4273b715dea41f45e559b32400a12212ed4",
+      "size": 2576,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/c06eb4273b715dea41f45e559b32400a12212ed4"
+    },
+    {
+      "path": "prompts/bridge-impact.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32235e399f68ed9eb2fc676b569e3ded2da84237",
+      "size": 2429,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/32235e399f68ed9eb2fc676b569e3ded2da84237"
+    },
+    {
+      "path": "prompts/bridge-promote.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8215d2aef84d774f2d491dda67486daf7721df73",
+      "size": 2958,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/8215d2aef84d774f2d491dda67486daf7721df73"
+    },
+    {
+      "path": "prompts/wiki-find-duplicates.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "227878cce8fef2a70e9783f1a8aee971d618885b",
+      "size": 3065,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/227878cce8fef2a70e9783f1a8aee971d618885b"
+    },
+    {
+      "path": "prompts/wiki-ingest.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f2a9ebf8d42e7515caf9b5c70628a7a3b18dcdc",
+      "size": 5188,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/8f2a9ebf8d42e7515caf9b5c70628a7a3b18dcdc"
+    },
+    {
+      "path": "prompts/wiki-lint.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02fec5ff8f28ba735222003e1090b799afbbb6ea",
+      "size": 5916,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/02fec5ff8f28ba735222003e1090b799afbbb6ea"
+    },
+    {
+      "path": "prompts/wiki-query.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fec821d0003ce464d433828ec2747fc0b5c909fb",
+      "size": 2745,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/fec821d0003ce464d433828ec2747fc0b5c909fb"
+    },
+    {
+      "path": "prompts/wiki-trace.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "519b1272a758aa34010f323fc876fbee4bf0bc55",
+      "size": 2975,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/519b1272a758aa34010f323fc876fbee4bf0bc55"
+    },
+    {
+      "path": "raw",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a5e4ba5389b76a4c3a8ce85752c1a63ac141e178",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/a5e4ba5389b76a4c3a8ce85752c1a63ac141e178"
+    },
+    {
+      "path": "raw/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "raw/articles",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5a6d3a3d6ae01955aeb211195d6d1680e9c4d539",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/5a6d3a3d6ae01955aeb211195d6d1680e9c4d539"
+    },
+    {
+      "path": "raw/articles/01-markdown-first-retrieval.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49abc213c04341f9d7f6454eafbe82d35fdb9aee",
+      "size": 2068,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/49abc213c04341f9d7f6454eafbe82d35fdb9aee"
+    },
+    {
+      "path": "raw/articles/02-index-as-routing-layer.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2cc908ac5d70981de89ed958b4ee68b31ad99c34",
+      "size": 1465,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/2cc908ac5d70981de89ed958b4ee68b31ad99c34"
+    },
+    {
+      "path": "raw/articles/03-semantic-search-early-counterclaim.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d65bf1b9abc906e75491d684d61930ef6ea1875",
+      "size": 1515,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/9d65bf1b9abc906e75491d684d61930ef6ea1875"
+    },
+    {
+      "path": "raw/articles/04-markdown-retrieval-copy.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "abb002af082c7079b5e9c31e18114b9fd3c12492",
+      "size": 1031,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/abb002af082c7079b5e9c31e18114b9fd3c12492"
+    },
+    {
+      "path": "raw/articles/05-experiment-result-native-search.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "088fc04a4cc2b3d08ca57915fe6e76bf34ec4591",
+      "size": 1729,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/088fc04a4cc2b3d08ca57915fe6e76bf34ec4591"
+    },
+    {
+      "path": "raw/articles/06-untrusted-instructions-test.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "967f0508893754fd035d4564951f00e56e00f1e1",
+      "size": 1697,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/967f0508893754fd035d4564951f00e56e00f1e1"
+    },
+    {
+      "path": "raw/articles/07-insufficient-evidence-question.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e6d925eb4b9b89708a830f1aba72d94423ce5cf",
+      "size": 1220,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/0e6d925eb4b9b89708a830f1aba72d94423ce5cf"
+    },
+    {
+      "path": "raw/articles/probe-add-only.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "306443567572db4c176b1024da014588b8ffe2e1",
+      "size": 178,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/306443567572db4c176b1024da014588b8ffe2e1"
+    },
+    {
+      "path": "raw/inbox",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "06449f889d84a6331321a2d4395aef9726f3baeb",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/06449f889d84a6331321a2d4395aef9726f3baeb"
+    },
+    {
+      "path": "raw/inbox/python-list-test.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44d4fbae8ed8530a460efc33ff699fc27a59c1d7",
+      "size": 429,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/44d4fbae8ed8530a460efc33ff699fc27a59c1d7"
+    },
+    {
+      "path": "raw/notes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a838042d0298c7212e3f5ae1cb8dcd34136cfab0",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/a838042d0298c7212e3f5ae1cb8dcd34136cfab0"
+    },
+    {
+      "path": "raw/notes/Agentic-AI",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3e5d2ff7709bec25e9413e3d65e9de6ba50cd310",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/3e5d2ff7709bec25e9413e3d65e9de6ba50cd310"
+    },
+    {
+      "path": "raw/notes/Agentic-AI/Agentic-AI.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5eaea91c82377eeb508531ca0625f8cecb9aaab",
+      "size": 4243,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/c5eaea91c82377eeb508531ca0625f8cecb9aaab"
+    },
+    {
+      "path": "raw/notes/Agentic-AI/Langchain-Ecosystem.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "953368dbbcd6f01a54b8275eadd6eea61e562ce9",
+      "size": 332,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/953368dbbcd6f01a54b8275eadd6eea61e562ce9"
+    },
+    {
+      "path": "raw/notes/Agentic-AI/Pydantic.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1554f7af5e15fd8798e0f51bbc316468dea2474f",
+      "size": 15765,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/1554f7af5e15fd8798e0f51bbc316468dea2474f"
+    },
+    {
+      "path": "raw/notes/Python",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c734dc488bb5f95f24f75f95184805e5a4db1e9b",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/c734dc488bb5f95f24f75f95184805e5a4db1e9b"
+    },
+    {
+      "path": "raw/notes/Python/File-IO.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5399d0ec79f1428f227311384782906d1665189e",
+      "size": 4194,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/5399d0ec79f1428f227311384782906d1665189e"
+    },
+    {
+      "path": "raw/notes/Python/Object-Oriented-Programming.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc1e4c434dbb3f50ae26ced970abaa0e378faf46",
+      "size": 8500,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/bc1e4c434dbb3f50ae26ced970abaa0e378faf46"
+    },
+    {
+      "path": "raw/notes/Python/Python.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b85072df54bb202f818d0880c3c069cfb402786",
+      "size": 31453,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/0b85072df54bb202f818d0880c3c069cfb402786"
+    },
+    {
+      "path": "raw/notes/Python/Unit-Tests.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89c39998a3b2eca083e08e010688d14dbb81c78d",
+      "size": 310,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/89c39998a3b2eca083e08e010688d14dbb81c78d"
+    },
+    {
+      "path": "raw/notes/sbx-Sandbox",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "87a6bdc5fe23f44bbc6ac94aeaa30e006a77e98a",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/87a6bdc5fe23f44bbc6ac94aeaa30e006a77e98a"
+    },
+    {
+      "path": "raw/notes/sbx-Sandbox/Agy-Sandbox.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ba0ee22e73cfc181bde658c0498a5706ee14615",
+      "size": 8740,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/3ba0ee22e73cfc181bde658c0498a5706ee14615"
+    },
+    {
+      "path": "raw/notes/sbx-Sandbox/Claude-Code-Sandbox.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "79f28560d6a88e10a07a16627c8ffccfc2ec8ce9",
+      "size": 2718,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/79f28560d6a88e10a07a16627c8ffccfc2ec8ce9"
+    },
+    {
+      "path": "raw/notes/sbx-Sandbox/Copilot-Gemini-CLI-Sandboxes.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1caec0776e410fed476eaf6a0be63ee25d135244",
+      "size": 10725,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/1caec0776e410fed476eaf6a0be63ee25d135244"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1f52e35579e74bd01b6b7578e9f2b747cd29290e",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/1f52e35579e74bd01b6b7578e9f2b747cd29290e"
+    },
+    {
+      "path": "scripts/baseline-metrics.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a96264570e5952560f6586f0e444f9abd26f6df",
+      "size": 2357,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/6a96264570e5952560f6586f0e444f9abd26f6df"
+    },
+    {
+      "path": "scripts/check-command-pointers.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "847b05658734a2ed9d7b6ac36f519a5ba56fefd4",
+      "size": 2830,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/847b05658734a2ed9d7b6ac36f519a5ba56fefd4"
+    },
+    {
+      "path": "scripts/check-okf-guard.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "531e071ea27bc537f7d218ed021c1d5688fb867f",
+      "size": 4606,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/531e071ea27bc537f7d218ed021c1d5688fb867f"
+    },
+    {
+      "path": "scripts/check-policy-sync.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2be7c64ff3694d4ee31bcbebabda7fa412f9ba17",
+      "size": 4922,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/2be7c64ff3694d4ee31bcbebabda7fa412f9ba17"
+    },
+    {
+      "path": "scripts/check-schema.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e410136590c657c2c03c4bf091790396a6f620fb",
+      "size": 5752,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/e410136590c657c2c03c4bf091790396a6f620fb"
+    },
+    {
+      "path": "scripts/find-duplicates.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad5f7d97b535380ca7329d92915442f5edee6728",
+      "size": 5888,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/ad5f7d97b535380ca7329d92915442f5edee6728"
+    },
+    {
+      "path": "scripts/guard-raw-universal.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6919da4242c4256fde8d3e3db70cb5e96c78fc2f",
+      "size": 6297,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/6919da4242c4256fde8d3e3db70cb5e96c78fc2f"
+    },
+    {
+      "path": "scripts/lib-vault.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3ce5db7452520d4b28ed62f959a2b8fa3ea566a",
+      "size": 4004,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/d3ce5db7452520d4b28ed62f959a2b8fa3ea566a"
+    },
+    {
+      "path": "scripts/lint-governance.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eaf725fd8004ce7385a7a56a896060d4b4e24079",
+      "size": 11608,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/eaf725fd8004ce7385a7a56a896060d4b4e24079"
+    },
+    {
+      "path": "scripts/lock-raw.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c96cebf32ac925252cfb22f71a3cd12f6d990c90",
+      "size": 1312,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/c96cebf32ac925252cfb22f71a3cd12f6d990c90"
+    },
+    {
+      "path": "scripts/test-baseline-metrics.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad3938c08943aab16cacbfcd4a49ac85033b26fe",
+      "size": 2003,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/ad3938c08943aab16cacbfcd4a49ac85033b26fe"
+    },
+    {
+      "path": "scripts/test-lint-governance.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b27d6f2780d5d25976ac607b5491a4517a229d8",
+      "size": 10022,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/1b27d6f2780d5d25976ac607b5491a4517a229d8"
+    },
+    {
+      "path": "scripts/test-portability.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "641ef14a5ff7a618617bdf6d76b25b3710bf2784",
+      "size": 15452,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/641ef14a5ff7a618617bdf6d76b25b3710bf2784"
+    },
+    {
+      "path": "scripts/test-schema.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4fd52fd18692a5343270b4b4481d3464ab917d1",
+      "size": 8836,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/b4fd52fd18692a5343270b4b4481d3464ab917d1"
+    },
+    {
+      "path": "scripts/test-wiki-lint.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20510d6da64d2eeef3e6318fe0a61b759554c6d8",
+      "size": 3542,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/20510d6da64d2eeef3e6318fe0a61b759554c6d8"
+    },
+    {
+      "path": "scripts/verify-vault.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "171b678a7ab322125a3299d962fe05d0a4048364",
+      "size": 10179,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/171b678a7ab322125a3299d962fe05d0a4048364"
+    },
+    {
+      "path": "scripts/wiki-lint.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5f3d3e85d6f5568c2df61b664b2e82d33a45f050",
+      "size": 7057,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/5f3d3e85d6f5568c2df61b664b2e82d33a45f050"
+    },
+    {
+      "path": "templates",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7705741c49e7bf9fcfc3a0dbf9b9459079d35c0f",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/7705741c49e7bf9fcfc3a0dbf9b9459079d35c0f"
+    },
+    {
+      "path": "templates/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "templates/concept.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ed4489d7cf4d4cf111be0d31e32eec7faf1f19f",
+      "size": 2130,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/6ed4489d7cf4d4cf111be0d31e32eec7faf1f19f"
+    },
+    {
+      "path": "templates/decision.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6147a668689a39fb7bbd9b657dd1182bce9250ec",
+      "size": 848,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/6147a668689a39fb7bbd9b657dd1182bce9250ec"
+    },
+    {
+      "path": "templates/experiment.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6b59069ac8e305f95bd860e7e5482cd055a7970",
+      "size": 861,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/c6b59069ac8e305f95bd860e7e5482cd055a7970"
+    },
+    {
+      "path": "templates/project.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85ad2ddd40e1e88112d97d0d278d8da58d3face9",
+      "size": 564,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/85ad2ddd40e1e88112d97d0d278d8da58d3face9"
+    },
+    {
+      "path": "templates/question.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e90dc8ea46c47a019331bd18bff57ba3e5aa5c80",
+      "size": 1434,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/e90dc8ea46c47a019331bd18bff57ba3e5aa5c80"
+    },
+    {
+      "path": "templates/source.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "579e323f0ea04df5e70767dec9408eaa9313748b",
+      "size": 771,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/579e323f0ea04df5e70767dec9408eaa9313748b"
+    },
+    {
+      "path": "templates/synthesis.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1ece40071c6ff6083c67f82d7d826a0e7dda078",
+      "size": 1091,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/b1ece40071c6ff6083c67f82d7d826a0e7dda078"
+    },
+    {
+      "path": "wiki",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "634b89268f94e5b733ff221074b4fcae4e901f81",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/634b89268f94e5b733ff221074b4fcae4e901f81"
+    },
+    {
+      "path": "wiki/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "wiki/concepts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "add7c25332d033c130789580f120a3ef66e5072a",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/add7c25332d033c130789580f120a3ef66e5072a"
+    },
+    {
+      "path": "wiki/concepts/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "wiki/concepts/Markdown-First Retrieval.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f44f42c25f1ea509fbb027c9c9652143cca1de7c",
+      "size": 4017,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/f44f42c25f1ea509fbb027c9c9652143cca1de7c"
+    },
+    {
+      "path": "wiki/concepts/Semantic Search Enablement Timing.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1453f7a8a69fd490967bfbb22199e04b1253e03",
+      "size": 2133,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/c1453f7a8a69fd490967bfbb22199e04b1253e03"
+    },
+    {
+      "path": "wiki/concepts/Wiki Index as Routing Layer.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "382ad6d476a51ac78831afcab7e416f48a4350b8",
+      "size": 1442,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/382ad6d476a51ac78831afcab7e416f48a4350b8"
+    },
+    {
+      "path": "wiki/concepts/Wiki Maintenance and Lint Layers.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86d7e44cd0708de27fd3b959aa89c02c0f85420c",
+      "size": 1736,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/86d7e44cd0708de27fd3b959aa89c02c0f85420c"
+    },
+    {
+      "path": "wiki/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef0ee71df89a9346da69b894c752f9e444e011c4",
+      "size": 1682,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/ef0ee71df89a9346da69b894c752f9e444e011c4"
+    },
+    {
+      "path": "wiki/log.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a084afc251011e32e6539bb9feb0ab526fcc815",
+      "size": 19005,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/3a084afc251011e32e6539bb9feb0ab526fcc815"
+    },
+    {
+      "path": "wiki/questions",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "edb89e8de8f989e61a06eeaa8f32b6aec60506cf",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/edb89e8de8f989e61a06eeaa8f32b6aec60506cf"
+    },
+    {
+      "path": "wiki/questions/Retrieval Architecture at Ten Thousand Pages.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9e5151ed36df5dded66b3d65c066de2cddc011d",
+      "size": 2220,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/b9e5151ed36df5dded66b3d65c066de2cddc011d"
+    },
+    {
+      "path": "wiki/sources",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f75f72f10815c76e7683ea77e2b9edc560296fe2",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/f75f72f10815c76e7683ea77e2b9edc560296fe2"
+    },
+    {
+      "path": "wiki/sources/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "wiki/sources/Source - Knowledge Maintenance Notes with Untrusted Instructions.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3d9a10bb26fef7678bae4ad5fb926fa2bf706d4",
+      "size": 2310,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/b3d9a10bb26fef7678bae4ad5fb926fa2bf706d4"
+    },
+    {
+      "path": "wiki/sources/Source - Markdown Retrieval for a Small Wiki.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63d37ebd555a084ff16b0c4a5c3d75c2ff1d476a",
+      "size": 1488,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/63d37ebd555a084ff16b0c4a5c3d75c2ff1d476a"
+    },
+    {
+      "path": "wiki/sources/Source - Markdown-First Retrieval for Small Knowledge Vaults.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e7c43f665027758f2d6f282e77968d82aadb570",
+      "size": 1279,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/5e7c43f665027758f2d6f282e77968d82aadb570"
+    },
+    {
+      "path": "wiki/sources/Source - Open Question - Retrieval at Ten Thousand Pages.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f061a45d149b66bbd6a00c6251037a74a76a139",
+      "size": 1697,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/1f061a45d149b66bbd6a00c6251037a74a76a139"
+    },
+    {
+      "path": "wiki/sources/Source - Pilot Experiment - Native Retrieval Benchmark.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "177634ec2fe9d455ff9716b211e2b72c97c17483",
+      "size": 1772,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/177634ec2fe9d455ff9716b211e2b72c97c17483"
+    },
+    {
+      "path": "wiki/sources/Source - Semantic Search Should Be Enabled During the Pilot.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51733b8dbf54727787d48a5cb3780bc5a55c32e9",
+      "size": 1515,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/51733b8dbf54727787d48a5cb3780bc5a55c32e9"
+    },
+    {
+      "path": "wiki/sources/Source - The Wiki Index as a Routing Layer.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d205010ab64809208009cdd2a4d8dc615bf0dee5",
+      "size": 1330,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/d205010ab64809208009cdd2a4d8dc615bf0dee5"
+    },
+    {
+      "path": "wiki/syntheses",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f22c037347b52d460063926c822c2206270c5e7c",
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/f22c037347b52d460063926c822c2206270c5e7c"
+    },
+    {
+      "path": "wiki/syntheses/.gitkeep",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "wiki/syntheses/Markdown-First Retrieval vs Early Semantic Search for Small Pilot Vaults.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "79a1ee0011c914a3f3b488fdb47562d6549880c6",
+      "size": 3236,
+      "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/blobs/79a1ee0011c914a3f3b488fdb47562d6549880c6"
+    }
+  ],
+  "truncated": false
+}

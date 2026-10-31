@@ -5,7 +5,9 @@ export type Project = {
   githubLink: string;
   // Optional: a project without a UI (a server, a library) may have nothing to screenshot.
   // The card renders a designed fallback panel instead.
-  image?: string;
+  // image?: string;
+  video?: string;
+  demo?: string;
 };
 
 export const projects: Project[] = [
@@ -15,7 +17,9 @@ export const projects: Project[] = [
       "A full-stack application designed to combat misinformation, featuring a Deepfake Image Detector powered by fine-tuned vision models and an intelligent Facts Verifier Chatbot with real-time web search capabilities.",
     tags: ["Next.js", "FastAPI", "Hugging Face"],
     githubLink: "https://github.com/ShunDa002/deepfake-detector-website",
-    image: "/images/projects/deepfake-detector.png",
+    // image: "/images/projects/deepfake-detector.png",
+    video: "https://youtu.be/kswDfgziS9I?si=7uktLUcZgXQ1tN0X",
+    demo: "https://deepfake-web-nine.vercel.app",
   },
   {
     title: "Malaysian SPM History (Sejarah) RAG",
@@ -23,7 +27,9 @@ export const projects: Project[] = [
       "A full-stack educational web app for learning Malaysian SPM History (Sejarah) using an AI-powered RAG chatbot with textbook citations, Next.js frontend, and FastAPI backend.",
     tags: ["Next.js", "FastAPI", "LangChain"],
     githubLink: "https://github.com/ShunDa002/sejarah-rag-website",
-    image: "/images/projects/sejarah-rag.png",
+    // image: "/images/projects/sejarah-rag.png",
+    video: "https://youtu.be/lBsQCQDbgOE?si=QmkUZV7_ORDlZeJz",
+    demo: "https://sejarah-rag-website.vercel.app",
   },
   {
     title: "Yahoo Finance MCP",

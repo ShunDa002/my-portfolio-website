@@ -1,0 +1,40 @@
+{
+  "sha": "no-links-vault-fixture",
+  "url": "https://api.github.com/repos/ShunDa002/llm-wiki3/git/trees/no-links-vault-fixture",
+  "tree": [
+    {
+      "path": "wiki",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "nolinks1"
+    },
+    {
+      "path": "wiki/concepts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "nolinks2"
+    },
+    {
+      "path": "wiki/concepts/page-a.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "nolinks3",
+      "size": 100
+    },
+    {
+      "path": "wiki/concepts/page-b.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "nolinks4",
+      "size": 100
+    },
+    {
+      "path": "wiki/sources/page-c.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "nolinks5",
+      "size": 100
+    }
+  ],
+  "truncated": false
+}
