@@ -8,13 +8,13 @@ Defines the single-page frame that every section renders inside: the document me
 
 ### Requirement: Single-page section order
 
-The site SHALL present all content on one scrolling page at the root route, with sections in this fixed order: hero, about, skills, projects, contact. There SHALL be no separate route for any section.
+The site SHALL present all of its section content on one scrolling page at the root route, with sections in this fixed order: hero, about, skills, projects, wiki graph, contact. There SHALL be no separate route for any section. Routes outside that set SHALL exist only where a dedicated capability defines one; at present there are no separate routes.
 
 #### Scenario: Visitor loads the site
 
 - **WHEN** a visitor opens the site root
 - **THEN** the hero section occupies the initial viewport
-- **AND** scrolling down reveals about, skills, projects, and contact in that order
+- **AND** scrolling down reveals about, skills, projects, wiki graph, and contact in that order
 - **AND** a consistent vertical gap separates each section from the next
 
 #### Scenario: Visitor requests a section path directly
@@ -22,20 +22,25 @@ The site SHALL present all content on one scrolling page at the root route, with
 - **WHEN** a visitor requests a path such as `/about` or `/projects`
 - **THEN** the site returns its not-found response, because sections are anchors on the root page rather than routes
 
+#### Scenario: Visitor requests a non-existent route or retired page
+
+- **WHEN** a visitor requests `/wiki`
+- **THEN** the site returns its not-found response, because no separate wiki graph page exists and the knowledge graph is presented exclusively within the wiki graph section on the root page
+
 ### Requirement: Persistent section navigation
 
-The site SHALL display a navigation control that remains visible at all scroll positions and offers direct links to the about, skills, projects, and contact sections. The navigation SHALL NOT link to the hero section, which is reachable by scrolling to the top.
+The site SHALL display a navigation control that remains visible at all scroll positions. On the root page the navigation SHALL offer direct links to the about, skills, projects, wiki graph, and contact sections in section order, and SHALL NOT link to the hero section, which is reachable by scrolling to the top. All navigation links SHALL share a uniform button design matching the site's ghost styling, jumping to in-page section anchors (`/#about`, `/#skills`, `/#projects`, `/#wiki`, `/#contact`) without leaving the page.
 
 #### Scenario: Visitor jumps to a section
 
-- **WHEN** a visitor activates the "Projects" navigation link
-- **THEN** the viewport moves to the projects section
+- **WHEN** a visitor activates any navigation link (e.g. "Projects" or "Wiki Graph")
+- **THEN** the viewport moves to that section
 - **AND** the navigation remains visible after the jump
 
 #### Scenario: Visitor navigates by keyboard
 
 - **WHEN** a visitor tabs through the page from the top
-- **THEN** the four navigation links receive focus in reading order before the hero content
+- **THEN** the navigation links receive focus in reading order (about, skills, projects, wiki graph, contact) before the hero content
 - **AND** each focused link is visually distinguishable from its unfocused state
 
 #### Scenario: Navigation does not obstruct content

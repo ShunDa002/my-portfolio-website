@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { HybridBackground } from "@/components/ui/hybrid-background";
 import { Header } from "@/components/ui/header";
+import { LoadingProvider } from "@/components/providers/loading-provider";
+import { LoadingScreen } from "@/components/ui/loading-screen";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,11 +37,14 @@ export default function RootLayout({
       className={`dark ${geistSans.variable} ${geistMono.variable}`}
     >
       <body className="antialiased text-slate-200 selection:bg-cyan-glow/30 selection:text-cyan-100">
-        <Header />
-        <HybridBackground />
-        <main className="relative z-20 flex flex-col items-center justify-center min-h-screen">
-          {children}
-        </main>
+        <LoadingProvider>
+          <LoadingScreen />
+          <Header />
+          <HybridBackground />
+          <main className="relative z-20 flex flex-col items-center justify-center min-h-screen">
+            {children}
+          </main>
+        </LoadingProvider>
       </body>
     </html>
   );

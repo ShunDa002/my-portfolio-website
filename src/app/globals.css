@@ -4,6 +4,14 @@
   --color-midnight: #020617;
   --color-cyan-glow: #22d3ee;
 
+  /* Wiki classification color tokens */
+  --color-wiki-concept: #38bdf8;
+  --color-wiki-source: #fbbf24;
+  --color-wiki-synthesis: #c084fc;
+  --color-wiki-question: #34d399;
+  --color-wiki-index: #f472b6;
+  --color-wiki-log: #94a3b8;
+
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
@@ -22,6 +30,12 @@
 
 :root {
   --background: var(--color-midnight);
+  --color-wiki-concept: #38bdf8;
+  --color-wiki-source: #fbbf24;
+  --color-wiki-synthesis: #c084fc;
+  --color-wiki-question: #34d399;
+  --color-wiki-index: #f472b6;
+  --color-wiki-log: #94a3b8;
 }
 
 body {

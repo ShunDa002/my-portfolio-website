@@ -1,6 +1,8 @@
-import { SiLinkedin, SiGithub } from "react-icons/si";
+import { SiGithub } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 import { Mail } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const Contact = () => {
   const email = "tayshunda@gmail.com";
@@ -19,32 +21,51 @@ export const Contact = () => {
       </p>
 
       <div className="flex items-center justify-center gap-6">
-        <Link
-          href={`mailto:${email}`}
-          className="group relative p-3 rounded-full bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 hover:scale-110 transition-all"
-          aria-label="Email"
+        <Button
+          asChild
+          variant="ghost"
+          size="icon"
+          className="h-12 w-12 rounded-full bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 hover:scale-110 transition-all"
         >
-          <Mail className="w-6 h-6" />
-        </Link>
+          <Link
+            href={`mailto:${email}`}
+            aria-label="Email"
+          >
+            <Mail className="w-6 h-6" />
+          </Link>
+        </Button>
 
-        <Link
-          href="https://www.linkedin.com/in/tay-shon-da-74b208335"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn profile"
-          className="p-3 rounded-full bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 hover:scale-110 transition-all"
+        <Button
+          asChild
+          variant="ghost"
+          size="icon"
+          className="h-12 w-12 rounded-full bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 hover:scale-110 transition-all"
         >
-          <SiLinkedin className="w-6 h-6" />
-        </Link>
-        <Link
-          href="https://github.com/ShunDa002"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub profile"
-          className="p-3 rounded-full bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 hover:scale-110 transition-all"
+          <Link
+            href="https://www.linkedin.com/in/tay-shon-da-74b208335"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+          >
+            <FaLinkedin className="w-6 h-6" />
+          </Link>
+        </Button>
+
+        <Button
+          asChild
+          variant="ghost"
+          size="icon"
+          className="h-12 w-12 rounded-full bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 hover:scale-110 transition-all"
         >
-          <SiGithub className="w-6 h-6" />
-        </Link>
+          <Link
+            href="https://github.com/ShunDa002"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+          >
+            <SiGithub className="w-6 h-6" />
+          </Link>
+        </Button>
       </div>
 
       <footer className="mt-20 text-slate-600 text-sm">
