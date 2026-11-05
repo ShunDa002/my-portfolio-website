@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export const Contact = () => {
-  const email = "tayshunda@gmail.com";
+  const email = "tayshonda1@gmail.com";
 
   return (
     <section
@@ -27,10 +27,7 @@ export const Contact = () => {
           size="icon"
           className="h-12 w-12 rounded-full bg-slate-800/50 text-slate-400 hover:text-white hover:bg-slate-700 hover:scale-110 transition-all"
         >
-          <Link
-            href={`mailto:${email}`}
-            aria-label="Email"
-          >
+          <Link href={`mailto:${email}`} aria-label="Email">
             <Mail className="w-6 h-6" />
           </Link>
         </Button>

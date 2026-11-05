@@ -1,6 +1,10 @@
 'use client';
 
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
+
+const emptySubscribe = () => () => {};
+const getClientSnapshot = () => true;
+const getServerSnapshot = () => false;
 
 interface GraphFrameProps {
   iframeSrc: string;
@@ -27,11 +31,9 @@ export function GraphFrame({
   const timeoutRef = useRef<number | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isTimedOut, setIsTimedOut] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  const isMounted = useSyncExternalStore(emptySubscribe, getClientSnapshot, getServerSnapshot);
 
   useEffect(() => {
-    setIsMounted(true);
-
     timeoutRef.current = window.setTimeout(() => {
       setIsTimedOut(true);
     }, LOAD_TIMEOUT_MS);
@@ -114,16 +116,18 @@ export function GraphFrame({
         }
         className="w-full"
       >
-        <iframe
-          ref={iframeRef}
-          src={isMounted ? iframeSrc : undefined}
-          title={title}
-          onLoad={handleIframeLoad}
-          className="block h-full w-full border-0"
-          loading={loading}
-          allow="fullscreen; clipboard-read; clipboard-write"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
+        {isMounted && (
+          <iframe
+            ref={iframeRef}
+            src={iframeSrc}
+            title={title}
+            onLoad={handleIframeLoad}
+            className="block h-full w-full border-0"
+            loading={loading}
+            allow="fullscreen; clipboard-read; clipboard-write"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        )}
       </div>
     </>
   );

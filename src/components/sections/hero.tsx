@@ -18,7 +18,10 @@ export const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative flex flex-col items-center justify-center min-h-screen max-w-5xl mx-auto px-6 text-center z-10 selection:bg-cyan-glow/30">
+    <section
+      id="hero"
+      className="relative flex flex-col items-center justify-center min-h-screen max-w-5xl mx-auto px-6 text-center z-10 selection:bg-cyan-glow/30"
+    >
       <div className="space-y-6">
         <h2 className="text-cyan-glow tracking-widest text-xs font-semibold uppercase opacity-0 animate-[fade-in-up_0.8s_ease-out_0.1s_forwards]">
           Tay&apos;s Portfolio
@@ -34,7 +37,7 @@ export const Hero = () => {
         <p className="text-lg md:text-2xl text-slate-300 max-w-2xl mx-auto font-normal opacity-0 animate-[fade-in-up_0.8s_ease-out_0.3s_forwards]">
           Software Engineering Student from Universiti Malaysia Pahang Al-Sultan
           Abdullah, who is currently{" "}
-          <span className="text-cyan-200">seeking for internship</span> in
+          <span className="text-cyan-200">seeking for full time job</span> in
           related to <span className="text-cyan-200">AI, LLMs</span>, and{" "}
           <span className="text-cyan-200">Computer Vision</span>.
         </p>
@@ -60,11 +63,7 @@ export const Hero = () => {
           size="lg"
           className="group flex items-center gap-2"
         >
-          <Link
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
             <span>Download Resume</span>
             <FileDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
           </Link>

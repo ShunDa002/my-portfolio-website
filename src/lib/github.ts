@@ -1,5 +1,4 @@
 import { load } from "js-yaml";
-import { projects as fallbackProjects } from "@/constant/projects_list";
 import type { Project } from "@/types/project";
 
 interface GitHubRepoItem {
@@ -20,13 +19,23 @@ interface GitHubContentResponse {
 }
 
 function getGitHubConfig() {
-  const rawToken = process.env.GITHUB_TOKEN?.trim();
-  const token = rawToken ? rawToken.replace(/^["']|["']$/g, "") : undefined;
+  const pEnv = (typeof process !== "undefined" && process.env
+    ? process.env
+    : {}) as Record<string, string | undefined>;
+  const g = (typeof globalThis !== "undefined"
+    ? globalThis
+    : {}) as Record<string, unknown>;
 
-  const rawUsername = process.env.MY_GITHUB_USERNAME?.trim();
-  const username = rawUsername
-    ? rawUsername.replace(/^["']|["']$/g, "")
-    : undefined;
+  const rawToken =
+    (typeof pEnv.GITHUB_TOKEN === "string" ? pEnv.GITHUB_TOKEN : "") ||
+    (typeof g.GITHUB_TOKEN === "string" ? (g.GITHUB_TOKEN as string) : "");
+  const token = rawToken ? rawToken.trim().replace(/^["']|["']$/g, "") : undefined;
+
+  const rawUsername =
+    (typeof pEnv.MY_GITHUB_USERNAME === "string" ? pEnv.MY_GITHUB_USERNAME : "") ||
+    (typeof g.MY_GITHUB_USERNAME === "string" ? (g.MY_GITHUB_USERNAME as string) : "") ||
+    "ShunDa002";
+  const username = rawUsername ? rawUsername.trim().replace(/^["']|["']$/g, "") : "ShunDa002";
 
   return { token, username };
 }
@@ -92,6 +101,20 @@ export async function fetchUserRepositories(): Promise<GitHubRepoItem[]> {
   return repos;
 }
 
+function decodeBase64Utf8(base64Str: string): string {
+  try {
+    if (typeof Buffer !== "undefined") {
+      return Buffer.from(base64Str, "base64").toString("utf-8");
+    }
+  } catch {}
+  const binary = atob(base64Str);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    bytes[i] = binary.charCodeAt(i);
+  }
+  return new TextDecoder("utf-8").decode(bytes);
+}
+
 /**
  * Fetch and parse .github/project-demo.yml for a given repository.
  * Returns null if the file does not exist (404) or is invalid.
@@ -127,7 +150,7 @@ export async function fetchProjectDemoYaml(
     }
 
     const cleanedContent = data.content.replace(/\r?\n/g, "");
-    const decodedYaml = Buffer.from(cleanedContent, "base64").toString("utf-8");
+    const decodedYaml = decodeBase64Utf8(cleanedContent);
     const parsedData = load(decodedYaml) as Record<string, unknown> | null;
 
     if (!parsedData || typeof parsedData !== "object") {
@@ -178,16 +201,23 @@ export async function fetchProjectDemoYaml(
   }
 }
 
+let memoryCache: { data: Project[]; timestamp: number } | null = null;
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+
 /**
  * Composite function to fetch all featured projects from GitHub repositories.
  * Inspects .github/project-demo.yml in each repo owned by the user.
- * Falls back to static fallbackProjects if GitHub API fails or yields no projects.
  */
 export async function getFeaturedProjects(): Promise<Project[]> {
+  const now = Date.now();
+  if (memoryCache && now - memoryCache.timestamp < CACHE_TTL_MS && memoryCache.data.length > 0) {
+    return memoryCache.data;
+  }
+
   try {
     const repos = await fetchUserRepositories();
     if (repos.length === 0) {
-      return fallbackProjects;
+      return memoryCache?.data ?? [];
     }
 
     const projectPromises = repos.map((repo) =>
@@ -204,19 +234,15 @@ export async function getFeaturedProjects(): Promise<Project[]> {
       }
     }
 
-    if (discoveredProjects.length === 0) {
-      console.info(
-        "No repository with valid .github/project-demo.yml found; falling back to static list."
-      );
-      return fallbackProjects;
+    if (discoveredProjects.length > 0) {
+      memoryCache = { data: discoveredProjects, timestamp: now };
+      return discoveredProjects;
     }
 
-    return discoveredProjects;
+    console.info("No repository with valid .github/project-demo.yml found.");
+    return memoryCache?.data ?? [];
   } catch (error) {
-    console.warn(
-      "Error fetching projects from GitHub API; using fallback list:",
-      error
-    );
-    return fallbackProjects;
+    console.warn("Error fetching projects from GitHub API:", error);
+    return memoryCache?.data ?? [];
   }
 }

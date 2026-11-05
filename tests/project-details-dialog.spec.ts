@@ -7,15 +7,17 @@ test.describe('Featured Projects Details Dialog Scenarios', () => {
   });
 
   test('Clicking a project card opens the horizontal video-dominant dialog with details', async ({ page }) => {
-    const firstCard = page.locator('#projects [role="button"]').first();
-    await expect(firstCard).toBeVisible();
+    const projectCard = page.locator('#projects [role="button"]', {
+      hasText: 'Deepfake Detector',
+    });
+    await expect(projectCard).toBeVisible();
 
     // Verify card title is not a direct link to GitHub
-    const titleLink = firstCard.locator('a');
+    const titleLink = projectCard.locator('a');
     await expect(titleLink).toHaveCount(0);
 
     // Click card to open dialog
-    await firstCard.click();
+    await projectCard.click();
 
     // Dialog content should be visible
     const dialog = page.locator('[role="dialog"]');
@@ -65,9 +67,31 @@ test.describe('Featured Projects Details Dialog Scenarios', () => {
   });
 
   test('Project without video displays stylized fallback panel in dialog', async ({ page }) => {
+    await page.route('**/api/projects', async (route) => {
+      await route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        body: JSON.stringify({
+          projects: [
+            {
+              title: 'Yahoo Finance MCP',
+              description:
+                'Yahoo Finance MCP is a lightweight MCP server that wraps yfinance into a clean set of tools for programmatic market data access.',
+              tags: ['Python', 'MCP'],
+              githubLink: 'https://github.com/ShunDa002/yahoo-finance-mcp',
+            },
+          ],
+        }),
+      });
+    });
+
+    await page.goto('/');
+    await page.locator('#projects').scrollIntoViewIfNeeded();
+
     const noVideoCard = page.locator('#projects [role="button"]', {
       hasText: 'Yahoo Finance MCP',
     });
+    await expect(noVideoCard).toBeVisible();
     await noVideoCard.click();
 
     const dialog = page.locator('[role="dialog"]');

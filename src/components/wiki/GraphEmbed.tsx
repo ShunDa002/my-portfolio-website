@@ -1,12 +1,18 @@
-'use client';
+"use client";
 
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { GraphEmbedOptions } from '@/types/graph-embed';
-import { GraphFrame } from './GraphFrame';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import type { GraphEmbedOptions } from "@/types/graph-embed";
+import { GraphFrame } from "./GraphFrame";
 
-const DEFAULT_GRAPH_URL =
+export const DEFAULT_GRAPH_URL =
   process.env.NEXT_PUBLIC_WIKI_GRAPH_URL ||
-  'https://wiki-graph.tay-shon-da1.workers.dev/graph';
+  "https://wiki-graph.tay-shon-da1.workers.dev/graph";
 
 // Height of the remote graph application's top navigation bar (3.5rem / 56px)
 export const REMOTE_HEADER_HEIGHT_PX = 56;
@@ -17,11 +23,11 @@ export function GraphEmbed({
   showChat = false,
   queryParams,
   cropHeader = false,
-  height = '640px',
-  className = '',
+  height = "640px",
+  className = "",
   showHostControls = true,
-  title = 'Interactive Knowledge Graph',
-  loading = 'eager',
+  title = "Interactive Knowledge Graph",
+  loading = "eager",
   onLoad,
 }: GraphEmbedOptions) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -33,16 +39,16 @@ export function GraphEmbed({
       const url = new URL(baseUrl);
 
       if (!showChat) {
-        url.searchParams.set('chat', 'false');
+        url.searchParams.set("chat", "false");
       }
 
       if (note?.trim()) {
-        url.searchParams.set('note', note.trim());
+        url.searchParams.set("note", note.trim());
       }
 
       if (queryParams) {
         Object.entries(queryParams).forEach(([key, value]) => {
-          if (value !== undefined && value !== null && value !== '') {
+          if (value !== undefined && value !== null && value !== "") {
             url.searchParams.set(key, String(value));
           }
         });
@@ -59,9 +65,9 @@ export function GraphEmbed({
       setIsFullscreen(Boolean(document.fullscreenElement));
     };
 
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
     return () =>
-      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
   }, []);
 
   const handleReload = useCallback(() => {
@@ -78,7 +84,7 @@ export function GraphEmbed({
         await document.exitFullscreen();
       }
     } catch (error) {
-      console.warn('Fullscreen toggle failed:', error);
+      console.warn("Fullscreen toggle failed:", error);
     }
   }, []);
 
@@ -86,7 +92,7 @@ export function GraphEmbed({
     <div
       ref={containerRef}
       data-testid="graph-embed-container"
-      style={{ height: isFullscreen ? '100vh' : height }}
+      style={{ height: isFullscreen ? "100vh" : height }}
       className={`relative w-full overflow-hidden rounded-2xl border border-slate-800 bg-[#060b18] shadow-2xl ${className}`}
     >
       {showHostControls && (
@@ -111,13 +117,13 @@ export function GraphEmbed({
             className="cursor-pointer rounded-lg px-2 py-1 transition hover:bg-slate-800 hover:text-white"
             title="Toggle Fullscreen"
           >
-            {isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
+            {isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
           </button>
           <span aria-hidden="true" className="text-slate-700">
             |
           </span>
           <a
-            href={iframeSrc}
+            href={DEFAULT_GRAPH_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-lg px-2 py-1 transition hover:bg-slate-800 hover:text-white"

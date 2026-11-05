@@ -4,7 +4,7 @@
 
 ### Requirement: Interactive window frame
 
-The wiki graph section SHALL render a framed window container occupying 70% of the viewport width, featuring a titlebar with window indicators, title, and address indication (`vault://llm-wiki3/graph`). The section SHALL present the knowledge graph directly within the window without requiring or linking to a separate graph page.
+The wiki graph section SHALL render a framed window container occupying 70% of the viewport width, featuring a titlebar with window indicators, title, and address indication (`https://wiki-graph.tay-shon-da1.workers.dev/graph`). The section SHALL present the knowledge graph directly within the window without requiring or linking to a separate graph page.
 
 #### Scenario: Window occupies 70% screen width
 - **WHEN** a visitor views the wiki graph section
@@ -12,7 +12,7 @@ The wiki graph section SHALL render a framed window container occupying 70% of t
 
 #### Scenario: Window chrome titlebar presentation
 - **WHEN** the wiki graph section renders
-- **THEN** the titlebar displays macOS-style window control dots and the `vault://llm-wiki3/graph` location text
+- **THEN** the titlebar displays macOS-style window control dots and the `https://wiki-graph.tay-shon-da1.workers.dev/graph` location text
 
 ### Requirement: Embedded zoomable knowledge graph visualization
 

@@ -1,27 +1,25 @@
 import React from "react";
 import type { IconType } from "react-icons";
 import {
-  SiPython,
   SiPytorch,
   SiLangchain,
+  SiLanggraph,
   SiOpencv,
+  SiScikitlearn,
   SiHuggingface,
   SiNextdotjs,
-  SiReact,
-  SiTailwindcss,
-  SiTypescript,
+  SiLaravel,
+  SiFastapi,
+  SiFlutter,
   SiDocker,
   SiGit,
   SiLinux,
-  SiSupabase,
 } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
 
 const SkillPill = ({ icon: Icon, name }: { icon: IconType; name: string }) => (
-  <Badge
-    variant="pill"
-    className="group gap-2 cursor-default"
-  >
+  <Badge variant="pill" className="group gap-2 cursor-default">
     <Icon className="w-5 h-5 text-slate-400 group-hover:text-cyan-glow transition-colors" />
     <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">
       {name}
@@ -49,11 +47,12 @@ export const Skills = () => {
             AI & Computer Vision
           </h3>
           <div className="flex flex-wrap gap-3">
-            <SkillPill icon={SiPython} name="Python" />
-            <SkillPill icon={SiPytorch} name="PyTorch" />
             <SkillPill icon={SiLangchain} name="LangChain" />
+            <SkillPill icon={SiLanggraph} name="LangGraph" />
+            <SkillPill icon={SiPytorch} name="PyTorch" />
             <SkillPill icon={SiHuggingface} name="Hugging Face" />
             <SkillPill icon={SiOpencv} name="OpenCV" />
+            <SkillPill icon={SiScikitlearn} name="Scikit-learn" />
           </div>
         </div>
 
@@ -64,9 +63,9 @@ export const Skills = () => {
           </h3>
           <div className="flex flex-wrap gap-3">
             <SkillPill icon={SiNextdotjs} name="Next.js" />
-            <SkillPill icon={SiReact} name="React" />
-            <SkillPill icon={SiTypescript} name="TypeScript" />
-            <SkillPill icon={SiTailwindcss} name="Tailwind CSS" />
+            <SkillPill icon={SiLaravel} name="Laravel" />
+            <SkillPill icon={SiFlutter} name="Flutter" />
+            <SkillPill icon={SiFastapi} name="FastAPI" />
           </div>
         </div>
 
@@ -76,10 +75,10 @@ export const Skills = () => {
             DevOps & Cloud
           </h3>
           <div className="flex flex-wrap gap-3">
-            <SkillPill icon={SiDocker} name="Docker" />
             <SkillPill icon={SiGit} name="Git" />
             <SkillPill icon={SiLinux} name="Linux" />
-            <SkillPill icon={SiSupabase} name="Supabase" />
+            <SkillPill icon={SiDocker} name="Docker" />
+            <SkillPill icon={FaAws} name="AWS" />
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ export function WikiSection() {
             </div>
 
             <span className="font-mono text-xs text-slate-400 font-medium pl-1 sm:pl-2 hidden sm:inline-block">
-              vault://llm-wiki3/graph
+              https://wiki-graph.tay-shon-da1.workers.dev/graph
             </span>
             <span className="font-mono text-xs text-slate-300 font-medium sm:hidden">
               Wiki Graph

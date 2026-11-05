@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { ArrowUpRight, Terminal } from "lucide-react";
-import { projects as defaultProjects } from "@/constant/projects_list";
 import type { Project } from "@/types/project";
 import { getYouTubeEmbedUrl } from "@/lib/video";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
@@ -30,10 +29,6 @@ export const Projects = ({ initialProjects }: ProjectsProps = {}) => {
   const { registerVideo, notifyVideoLoaded } = useLoading();
 
   useEffect(() => {
-    if (initialProjects && initialProjects.length > 0) {
-      return;
-    }
-
     let isMounted = true;
     fetch("/api/projects")
       .then((res) => {
@@ -59,14 +54,15 @@ export const Projects = ({ initialProjects }: ProjectsProps = {}) => {
     return () => {
       isMounted = false;
     };
-  }, [initialProjects]);
+  }, []);
 
-  const projectItems =
-    dynamicProjects && dynamicProjects.length > 0
-      ? dynamicProjects
-      : initialProjects && initialProjects.length > 0
-        ? initialProjects
-        : defaultProjects;
+  const projectItems = useMemo(
+    () =>
+      dynamicProjects && dynamicProjects.length > 0
+        ? dynamicProjects
+        : initialProjects ?? [],
+    [dynamicProjects, initialProjects]
+  );
 
   useEffect(() => {
     projectItems.forEach((project) => {

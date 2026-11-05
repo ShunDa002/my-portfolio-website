@@ -22,7 +22,7 @@ test.describe('External Knowledge Graph Embed', () => {
     await expect(frame).toBeVisible();
 
     // Verify titlebar
-    await expect(frame.getByText('vault://llm-wiki3/graph')).toBeVisible();
+    await expect(frame.getByText('https://wiki-graph.tay-shon-da1.workers.dev/graph')).toBeVisible();
 
     // Verify GraphEmbed container and viewport
     const embedContainer = frame.locator('[data-testid="graph-embed-container"]');
@@ -50,7 +50,9 @@ test.describe('External Knowledge Graph Embed', () => {
     await expect(controls).toBeVisible();
     await expect(controls.getByRole('button', { name: /Reload/i })).toBeVisible();
     await expect(controls.getByRole('button', { name: /Fullscreen/i })).toBeVisible();
-    await expect(controls.getByRole('link', { name: /Open/i })).toBeVisible();
+    const openLink = controls.getByRole('link', { name: /Open/i });
+    await expect(openLink).toBeVisible();
+    await expect(openLink).toHaveAttribute('href', 'https://wiki-graph.tay-shon-da1.workers.dev/graph');
   });
 
   test('dedicated /embed route serves full-viewport graph viewer', async ({ page }) => {
@@ -78,6 +80,10 @@ test.describe('External Knowledge Graph Embed', () => {
     // Controls should be visible
     const controls = page.locator('[data-testid="graph-embed-controls"]');
     await expect(controls).toBeVisible();
+    await expect(controls.getByRole('link', { name: /Open/i })).toHaveAttribute(
+      'href',
+      'https://wiki-graph.tay-shon-da1.workers.dev/graph'
+    );
 
     // Viewport should have -56px crop margin
     const viewport = page.locator('[data-testid="graph-embed-viewport"]');
